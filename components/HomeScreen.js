@@ -9,21 +9,20 @@ export default function HomeScreen() {
     <View style={styles.container}>
       <View style={styles.header}>
         <Text style={{ fontSize: 14, fontWeight: "bold", color: "grey" }}>
-          Location
+          Weather
         </Text>
         <Icon name="notifications" size={24} color={"grey"} />
       </View>
       <View style={styles.header}>
-        <Text style={styles.textHeader}>Find hospitals near here</Text>
+        <Text style={styles.textHeader}>Find your doctor here</Text>
       </View>
       <ScrollView showsVerticalScrollIndicator={false}>
         <View style={styles.serachInputContainer}>
           <Icon name="search" size={30} style={{ marginLeft: 10 }} />
           <TextInput
-            placeholder="Type your current location"
+            placeholder="Type your doctor's name"
             style={{ fontSize: 16, paddingLeft: 10 }}
           />
-          <Icon name="tune" size={30} style={{ marginLeft: 70 }} />
         </View>
       </ScrollView>
       <View style={styles.header}>
@@ -53,7 +52,7 @@ const styles = StyleSheet.create({
     backgroundColor: "white",
     marginTop: 15,
     marginLeft: 20,
-    marginRight: 20,
+    marginRight: 23,
     borderRadius: 10,
     flexDirection: "row",
     alignItems: "center",
