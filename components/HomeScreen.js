@@ -38,7 +38,7 @@ const styles = StyleSheet.create({
     backgroundColor: "white",
   },
   header: {
-    marginTop: 20,
+    marginTop: 50,
     flexDirection: "row",
     justifyContent: "space-between",
     paddingHorizontal: 20,
