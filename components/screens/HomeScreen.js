@@ -1,7 +1,16 @@
 import React from "react";
-import { StyleSheet, View, Text, ScrollView, TextInput } from "react-native";
+import {
+  StyleSheet,
+  View,
+  Text,
+  ScrollView,
+  TextInput,
+  FlatList,
+} from "react-native";
 import { Input, Icon } from "react-native-elements";
 import CategoryList from "../subcomponents/CategoryList";
+import Card from "../subcomponents/Card";
+import doctors from "../consts/Doctor";
 
 export default function HomeScreen({ navigation }) {
   return (
@@ -9,7 +18,7 @@ export default function HomeScreen({ navigation }) {
       <View style={styles.header}>
         <View>
           <Text style={{ fontSize: 28, fontWeight: "bold" }}>Dashboard</Text>
-          <Text style={{ fontSize: 16 }}>Tuesday, April 12</Text>
+          <Text style={{ fontSize: 16 }}>Friday, April 15</Text>
         </View>
         <Icon name="notifications" size={26} color={"grey"} />
       </View>
@@ -26,7 +35,15 @@ export default function HomeScreen({ navigation }) {
             <Icon name="search" size={30} style={{ marginRight: 10 }} />
           </View>
           <CategoryList />
-          <Text>This blank space is for doctor flatlist!</Text>
+          <FlatList
+            horizontal
+            showsHorizontalScrollIndicator={false}
+            data={doctors}
+            contentContainerStyle={{ paddingVertical: 30, paddingLeft: 20 }}
+            renderItem={({ item, index }) => (
+              <Card doctor={item} index={index} />
+            )}
+          />
         </ScrollView>
         <View style={styles.header}>
           <Text style={styles.textHeader}>Quick Access</Text>

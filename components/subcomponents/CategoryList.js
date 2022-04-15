@@ -16,6 +16,7 @@ function CategoryList() {
     <View style={{ marginRight: 20 }}>
       <FlatList
         horizontal
+        showsHorizontalScrollIndicator={false}
         data={categories}
         keyExtractor={(item, index) => index}
         renderItem={({ item, index }) => (
