@@ -43,7 +43,10 @@ const styles = StyleSheet.create({
   },
   cardImage: {
     height: 230,
-    width: "100%",
+    width: "90%",
+    marginTop: 8,
+    marginRight: "auto",
+    marginLeft: "auto",
     borderTopLeftRadius: 15,
     borderTopRightRadius: 15,
     borderBottomLeftRadius: 15,

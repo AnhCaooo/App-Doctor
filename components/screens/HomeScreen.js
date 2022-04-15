@@ -8,47 +8,55 @@ import {
   FlatList,
 } from "react-native";
 import { Input, Icon } from "react-native-elements";
+import Headline from "../subcomponents/Headline";
 import CategoryList from "../subcomponents/CategoryList";
 import Card from "../subcomponents/Card";
+import QuickRoute from "../subcomponents/QuickRoute";
 import doctors from "../consts/Doctor";
+import pageImages from "../consts/PageImages";
 
 export default function HomeScreen({ navigation }) {
   return (
     <View style={styles.container}>
-      <View style={styles.header}>
-        <View>
-          <Text style={{ fontSize: 28, fontWeight: "bold" }}>Dashboard</Text>
-          <Text style={{ fontSize: 16 }}>Friday, April 15</Text>
-        </View>
-        <Icon name="notifications" size={26} color={"grey"} />
-      </View>
-      <ScrollView showsVerticalScrollIndicator={false}>
+      <Headline />
+
+      <View>
         <View style={styles.header}>
           <Text style={styles.textHeader}>Find your doctor here</Text>
         </View>
-        <View>
-          <View style={styles.serachInputContainer}>
-            <TextInput
-              placeholder="Type your doctor's name"
-              style={{ fontSize: 16, paddingLeft: 15 }}
-            />
-            <Icon name="search" size={30} style={{ marginRight: 10 }} />
-          </View>
-          <CategoryList />
-          <FlatList
-            horizontal
-            showsHorizontalScrollIndicator={false}
-            data={doctors}
-            contentContainerStyle={{ paddingVertical: 30, paddingLeft: 20 }}
-            renderItem={({ item, index }) => (
-              <Card doctor={item} index={index} />
-            )}
+      </View>
+      <View>
+        <View style={styles.serachInputContainer}>
+          <TextInput
+            placeholder="Type your doctor's name"
+            style={{ fontSize: 16, paddingLeft: 15 }}
           />
+          <Icon name="search" size={30} style={{ marginRight: 10 }} />
         </View>
+
+        <CategoryList />
+
+        <FlatList
+          horizontal
+          showsHorizontalScrollIndicator={false}
+          data={doctors}
+          contentContainerStyle={{ paddingVertical: 30, paddingLeft: 20 }}
+          renderItem={({ item, index }) => <Card doctor={item} index={index} />}
+        />
+      </View>
+
+      <View>
         <View style={styles.headerQuickAcess}>
           <Text style={styles.textHeaderQuickAccess}>Quick Access</Text>
         </View>
-      </ScrollView>
+
+        <FlatList
+          showsVerticalScrollIndicator={false}
+          data={pageImages}
+          contentContainerStyle={{ marginTop: 20 }}
+          renderItem={({ item, index }) => <QuickRoute page={item} />}
+        />
+      </View>
     </View>
   );
 }
