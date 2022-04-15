@@ -9,12 +9,15 @@ import {
 } from "react-native";
 
 const { width } = Dimensions.get("screen");
-const cardWidth = width / 2;
+const cardWidth = width / 1.9;
 
 function Card({ doctor, index }) {
   return (
     <View style={styles.card}>
-      <Image source={doctor.image} style={styles.cardImage} />
+      <Image
+        source={doctor.image}
+        style={[styles.cardImage, styles.shadowProp]}
+      />
       <View style={styles.cardTitle}>
         <Text style={{ fontWeight: "bold", fontSize: 16 }}>
           Dr.{doctor.lastname}
@@ -52,5 +55,11 @@ const styles = StyleSheet.create({
     marginTop: 10,
     marginLeft: 8,
     marginRight: 8,
+  },
+  shadowProp: {
+    shadowColor: "#171717",
+    shadowOffset: { width: -2, height: 4 },
+    shadowOpacity: 0.2,
+    shadowRadius: 3,
   },
 });

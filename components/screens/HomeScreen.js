@@ -26,7 +26,7 @@ export default function HomeScreen({ navigation }) {
         <View style={styles.header}>
           <Text style={styles.textHeader}>Find your doctor here</Text>
         </View>
-        <ScrollView showsVerticalScrollIndicator={false}>
+        <View>
           <View style={styles.serachInputContainer}>
             <TextInput
               placeholder="Type your doctor's name"
@@ -44,9 +44,9 @@ export default function HomeScreen({ navigation }) {
               <Card doctor={item} index={index} />
             )}
           />
-        </ScrollView>
-        <View style={styles.header}>
-          <Text style={styles.textHeader}>Quick Access</Text>
+        </View>
+        <View style={styles.headerQuickAcess}>
+          <Text style={styles.textHeaderQuickAccess}>Quick Access</Text>
         </View>
       </ScrollView>
     </View>
@@ -59,7 +59,7 @@ const styles = StyleSheet.create({
     backgroundColor: "white",
   },
   header: {
-    marginTop: 40,
+    marginTop: 35,
     flexDirection: "row",
     justifyContent: "space-between",
     paddingHorizontal: 20,
@@ -68,6 +68,16 @@ const styles = StyleSheet.create({
     fontSize: 24,
     fontWeight: "bold",
   },
+  headerQuickAcess: {
+    marginTop: 20,
+    justifyContent: "space-between",
+    paddingHorizontal: 20,
+  },
+  textHeaderQuickAccess: {
+    fontSize: 26,
+    fontWeight: "bold",
+  },
+
   serachInputContainer: {
     height: 50,
     backgroundColor: "white",
