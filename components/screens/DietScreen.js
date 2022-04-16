@@ -1,14 +1,33 @@
 import React from "react";
-import { View, Text } from "react-native";
+import { StyleSheet, View, Text, Button } from "react-native";
 
-export default function DietScreen({ navigation }) {
+function DietScreen({ navigation }) {
   return (
-    <View>
-      <Text>This is DietScreen</Text>
+    <View style={styles.container}>
+      <Text style={styles.header}>This is DietScreen</Text>
       <Button
-        title="Go to diet"
+        title="Go to appointment"
         onPress={() => navigation.navigate("Appointment")}
       />
     </View>
   );
 }
+
+export default DietScreen;
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: "white",
+  },
+  header: {
+    marginTop: 35,
+    flexDirection: "row",
+    justifyContent: "space-between",
+    paddingHorizontal: 20,
+  },
+  textHeader: {
+    fontSize: 24,
+    fontWeight: "bold",
+  },
+});

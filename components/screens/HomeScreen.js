@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   StyleSheet,
   View,
@@ -6,6 +6,8 @@ import {
   ScrollView,
   TextInput,
   FlatList,
+  TouchableOpacity,
+  Dimensions,
 } from "react-native";
 import { Input, Icon } from "react-native-elements";
 import Headline from "../subcomponents/Headline";
@@ -16,6 +18,10 @@ import doctors from "../consts/Doctor";
 import pageImages from "../consts/PageImages";
 
 export default function HomeScreen({ navigation }) {
+  const [activeCardIndex, setActiveCardIndex] = useState(0);
+  const { width } = Dimensions.get("screen");
+  const cardWidth = width / 1.9;
+
   return (
     <View style={styles.container}>
       <Headline />
@@ -43,12 +49,23 @@ export default function HomeScreen({ navigation }) {
 
         <View>
           <FlatList
+            onMomentumScrollEnd={(e) => {
+              setActiveCardIndex(
+                Math.round(e.nativeEvent.contentOffset.x / cardWidth)
+              );
+            }}
             horizontal
             showsHorizontalScrollIndicator={false}
             data={doctors}
             contentContainerStyle={{ paddingVertical: 30, paddingLeft: 20 }}
             renderItem={({ item, index }) => (
-              <Card doctor={item} index={index} />
+              <TouchableOpacity
+                disabled={activeCardIndex != index}
+                activeOpacity={1}
+                onPress={() => navigation.navigate("Appointment")}
+              >
+                <Card doctor={item} index={index} />
+              </TouchableOpacity>
             )}
           />
         </View>
