@@ -20,7 +20,10 @@ export default function HomeScreen({ navigation }) {
     <View style={styles.container}>
       <Headline />
 
-      <ScrollView nestedScrollEnabled={true}>
+      <ScrollView
+        nestedScrollEnabled={false}
+        showsVerticalScrollIndicator={false}
+      >
         <View style={styles.header}>
           <Text style={styles.textHeader}>Find your doctor here</Text>
         </View>
@@ -30,6 +33,7 @@ export default function HomeScreen({ navigation }) {
             placeholder="Type your doctor's name"
             style={{ fontSize: 16, paddingLeft: 15 }}
           />
+
           <Icon name="search" size={30} style={{ marginRight: 10 }} />
         </View>
 
@@ -55,9 +59,13 @@ export default function HomeScreen({ navigation }) {
 
         <View>
           <FlatList
-            showsVerticalScrollIndicator={false}
+            horizontal
+            showsHorizontalScrollIndicator={false}
             data={pageImages}
-            contentContainerStyle={{ marginTop: 20 }}
+            contentContainerStyle={{
+              paddingLeft: 20,
+              paddingVertical: 30,
+            }}
             renderItem={({ item, index }) => <QuickRoute page={item} />}
           />
         </View>
@@ -90,7 +98,6 @@ const styles = StyleSheet.create({
     fontSize: 26,
     fontWeight: "bold",
   },
-
   serachInputContainer: {
     height: 50,
     backgroundColor: "white",

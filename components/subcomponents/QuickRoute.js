@@ -1,12 +1,27 @@
 import React from "react";
-import { StyleSheet, View, Dimensions, Image } from "react-native";
+import {
+  StyleSheet,
+  View,
+  Dimensions,
+  ImageBackground,
+  Text,
+} from "react-native";
 
 const { width } = Dimensions.get("screen");
+const cardWidth = width / 1.2;
 
 function QuickRoute({ page }) {
   return (
     <View style={styles.quickRoute}>
-      <Image style={styles.quickRouteImage} source={page.image} />
+      <ImageBackground
+        style={styles.quickRouteImage}
+        imageStyle={{ borderRadius: 15 }}
+        source={page.image}
+      >
+        <View style={styles.routeTag}>
+          <Text style={{ fontSize: 26, fontWeight: "bold" }}>{page.name}</Text>
+        </View>
+      </ImageBackground>
     </View>
   );
 }
@@ -15,15 +30,19 @@ export default QuickRoute;
 
 const styles = StyleSheet.create({
   quickRoute: {
-    height: 150,
-    width: width,
+    height: 200,
+    width: cardWidth,
     elevation: 15,
-    borderRadius: 10,
+    marginRight: 20,
+    borderRadius: 15,
   },
   quickRouteImage: {
-    height: 150,
+    height: 200,
     width: "100%",
-    borderTopLeftRadius: 10,
-    borderTopRightRadius: 10,
+    justifyContent: "center",
+  },
+  routeTag: {
+    alignItems: "center",
+    lineHeight: 75,
   },
 });

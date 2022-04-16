@@ -39,7 +39,7 @@ const styles = StyleSheet.create({
     borderColor: "#b4b4b4",
     marginTop: 30,
     marginLeft: 20,
-    marginBottom: 20,
+    marginBottom: 5,
   },
   categortListText: {
     fontSize: 15,

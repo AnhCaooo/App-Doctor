@@ -47,10 +47,7 @@ const styles = StyleSheet.create({
     marginTop: 8,
     marginRight: "auto",
     marginLeft: "auto",
-    borderTopLeftRadius: 15,
-    borderTopRightRadius: 15,
-    borderBottomLeftRadius: 15,
-    borderBottomRightRadius: 15,
+    borderRadius: 15,
   },
   cardTitle: {
     flexDirection: "row",
