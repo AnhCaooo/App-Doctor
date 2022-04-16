@@ -6,6 +6,7 @@ const doctors = [
     professional: "General Practioner",
     title: "GP",
     image: require("../assets/General_Practioner_Female.png"),
+    avatar: require("../assets/General_Practioner_Female_Avatar.png"),
     description: "Doctor of the highest qualification category",
     experiences: "31 years",
     details:
@@ -18,6 +19,7 @@ const doctors = [
     professional: "General Practioner",
     title: "GP",
     image: require("../assets/General_Practioner_Male.png"),
+    avatar: require("../assets/General_Practioner_Male_Avatar.png"),
     description: "Doctor of the highest qualification category",
     experiences: "25 years",
     details:
@@ -30,6 +32,7 @@ const doctors = [
     professional: "Dermatologist",
     title: "Dermatologist",
     image: require("../assets/Dermatologist_Female.png"),
+    avatar: require("../assets/Dermatologist_Female_Avatar.png"),
     description: "Doctor of the highest qualification category",
     experiences: "30 years",
     details:
@@ -42,6 +45,7 @@ const doctors = [
     professional: "Internale Medicine",
     title: "Internale",
     image: require("../assets/Internale_Medicine_Male.png"),
+    avatar: require("../assets/Internale_Medicine_Male_Avatar.png"),
     description: "Doctor of the highest qualification category",
     experiences: "20 years",
     details:
@@ -54,6 +58,7 @@ const doctors = [
     professional: "Internale Medicine",
     title: "Internale",
     image: require("../assets/Internale_Medicine_Female.png"),
+    avatar: require("../assets/Internale_Medicine_Female_Avatar.png"),
     description: "Doctor of the highest qualification category",
     experiences: "28 years",
     details:
@@ -66,6 +71,7 @@ const doctors = [
     professional: "Herbal Medicine",
     title: "Herbal",
     image: require("../assets/Herbal_Medicine_Female.png"),
+    avatar: require("../assets/Herbal_Medicine_Female_Avatar.png"),
     description: "Doctor of the highest qualification category",
     experiences: "11 years",
     details:
@@ -78,6 +84,7 @@ const doctors = [
     professional: "Herbal Medicine",
     title: "Herbal",
     image: require("../assets/Herbal_Medicine_Male.png"),
+    avatar: require("../assets/Herbal_Medicine_Male_Avatar.png"),
     description: "Doctor of the highest qualification category",
     experiences: "16 years",
     details:
@@ -90,6 +97,7 @@ const doctors = [
     professional: "Infectious Disease",
     title: "Infectious Disease",
     image: require("../assets/Infectious_Disease_Male_2.png"),
+    avatar: require("../assets/Infectious_Disease_Male_2_Avatar.png"),
     description: "Doctor of the highest qualification category",
     experiences: "22 years",
     details:
@@ -102,6 +110,7 @@ const doctors = [
     professional: "Infectious Disease",
     title: "Infectious Disease",
     image: require("../assets/Infectious_Disease_Male.png"),
+    avatar: require("../assets/Infectious_Disease_Male_Avatar.png"),
     description: "Doctor of the highest qualification category",
     experiences: "31 years",
     details:
@@ -114,6 +123,7 @@ const doctors = [
     professional: "Surgeon",
     title: "Surgeon",
     image: require("../assets/Surgeon_Male.png"),
+    avatar: require("../assets/Surgeon_Male_Avatar.png"),
     description: "Doctor of the highest qualification category",
     experiences: "35 years",
     details:
@@ -126,6 +136,7 @@ const doctors = [
     professional: "Surgeon",
     title: "Surgeon",
     image: require("../assets/Surgeon_Female.png"),
+    avatar: require("../assets/Surgeon_Female_Avatar.png"),
     description: "Doctor of the highest qualification category",
     experiences: "29 years",
     details:
@@ -138,6 +149,7 @@ const doctors = [
     professional: "Veterinarian",
     title: "Veterinarian",
     image: require("../assets/Veterinarian_Female.png"),
+    avatar: require("../assets/Veterinarian_Female_Avatar.png"),
     description: "Doctor of the highest qualification category",
     experiences: "5 years",
     details:
@@ -150,6 +162,7 @@ const doctors = [
     professional: "Veterinarian",
     title: "Veterinarian",
     image: require("../assets/Veterinarian_Male.png"),
+    avatar: require("../assets/Veterinarian_Male_Avatar.png"),
     description: "Doctor of the highest qualification category",
     experiences: "11 years",
     details:

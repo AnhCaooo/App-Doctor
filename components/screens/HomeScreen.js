@@ -62,7 +62,7 @@ export default function HomeScreen({ navigation }) {
               <TouchableOpacity
                 disabled={activeCardIndex != index}
                 activeOpacity={1}
-                onPress={() => navigation.navigate("Appointment")}
+                onPress={() => navigation.navigate("Appointment", item)}
               >
                 <Card doctor={item} index={index} />
               </TouchableOpacity>
