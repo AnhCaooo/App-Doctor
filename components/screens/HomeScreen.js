@@ -20,12 +20,11 @@ export default function HomeScreen({ navigation }) {
     <View style={styles.container}>
       <Headline />
 
-      <View>
+      <ScrollView nestedScrollEnabled={true}>
         <View style={styles.header}>
           <Text style={styles.textHeader}>Find your doctor here</Text>
         </View>
-      </View>
-      <View>
+
         <View style={styles.serachInputContainer}>
           <TextInput
             placeholder="Type your doctor's name"
@@ -34,29 +33,35 @@ export default function HomeScreen({ navigation }) {
           <Icon name="search" size={30} style={{ marginRight: 10 }} />
         </View>
 
-        <CategoryList />
+        <View>
+          <CategoryList />
+        </View>
 
-        <FlatList
-          horizontal
-          showsHorizontalScrollIndicator={false}
-          data={doctors}
-          contentContainerStyle={{ paddingVertical: 30, paddingLeft: 20 }}
-          renderItem={({ item, index }) => <Card doctor={item} index={index} />}
-        />
-      </View>
+        <View>
+          <FlatList
+            horizontal
+            showsHorizontalScrollIndicator={false}
+            data={doctors}
+            contentContainerStyle={{ paddingVertical: 30, paddingLeft: 20 }}
+            renderItem={({ item, index }) => (
+              <Card doctor={item} index={index} />
+            )}
+          />
+        </View>
 
-      <View>
         <View style={styles.headerQuickAcess}>
           <Text style={styles.textHeaderQuickAccess}>Quick Access</Text>
         </View>
 
-        <FlatList
-          showsVerticalScrollIndicator={false}
-          data={pageImages}
-          contentContainerStyle={{ marginTop: 20 }}
-          renderItem={({ item, index }) => <QuickRoute page={item} />}
-        />
-      </View>
+        <View>
+          <FlatList
+            showsVerticalScrollIndicator={false}
+            data={pageImages}
+            contentContainerStyle={{ marginTop: 20 }}
+            renderItem={({ item, index }) => <QuickRoute page={item} />}
+          />
+        </View>
+      </ScrollView>
     </View>
   );
 }
