@@ -6,6 +6,7 @@ import {
   Text,
   Dimensions,
   Image,
+  TouchableOpacity,
 } from "react-native";
 
 const { width } = Dimensions.get("screen");

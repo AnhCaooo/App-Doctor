@@ -35,6 +35,8 @@ const styles = StyleSheet.create({
     elevation: 15,
     marginRight: 20,
     borderRadius: 15,
+    borderWidth: 5,
+    borderColor: "white",
   },
   quickRouteImage: {
     height: 200,
