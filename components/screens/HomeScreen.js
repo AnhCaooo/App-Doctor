@@ -19,6 +19,7 @@ import pageImages from "../consts/PageImages";
 
 export default function HomeScreen({ navigation }) {
   const [activeCardIndex, setActiveCardIndex] = useState(0);
+
   const { width } = Dimensions.get("screen");
   const cardWidth = width / 1.9;
 
@@ -62,7 +63,7 @@ export default function HomeScreen({ navigation }) {
               <TouchableOpacity
                 disabled={activeCardIndex != index}
                 activeOpacity={1}
-                onPress={() => navigation.navigate("Appointment", item)}
+                onPress={() => navigation.navigate("Booking", item)}
               >
                 <Card doctor={item} index={index} />
               </TouchableOpacity>

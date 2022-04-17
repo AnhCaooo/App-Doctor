@@ -1,13 +1,37 @@
 import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import Ionicons from "react-native-vector-icons/Ionicons";
 
 import AppointmentScreen from "../screens/AppointmentScreen";
+import BookingScreen from "../screens/BookingScreen";
 import DietScreen from "../screens/DietScreen";
 import HomeScreen from "../screens/HomeScreen";
 import ProfileScreen from "../screens/ProfileScreen";
 
 const Tab = createBottomTabNavigator();
+const Stack = createNativeStackNavigator();
+
+const HomeStackNavigator = () => {
+  return (
+    <Stack.Navigator>
+      <Stack.Screen
+        name="HomeStack"
+        component={HomeScreen}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="Booking"
+        component={BookingScreen}
+        options={{
+          title: "Book Appointment",
+          headerTitleAlign: "center",
+          headerTitleStyle: { fontSize: 18, fontWeight: "bold" },
+        }}
+      />
+    </Stack.Navigator>
+  );
+};
 
 const TabNavigator = () => {
   return (
@@ -33,7 +57,7 @@ const TabNavigator = () => {
         headerShown: false,
       })}
     >
-      <Tab.Screen name="Home" component={HomeScreen} />
+      <Tab.Screen name="Home" component={HomeStackNavigator} />
       <Tab.Screen name="Appointment" component={AppointmentScreen} />
       <Tab.Screen name="Diet" component={DietScreen} />
       <Tab.Screen name="Profile" component={ProfileScreen} />

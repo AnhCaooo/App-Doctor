@@ -7,7 +7,7 @@ function DietScreen({ navigation }) {
       <Text style={styles.header}>This is DietScreen</Text>
       <Button
         title="Go to appointment"
-        onPress={() => navigation.navigate("Appointment")}
+        onPress={() => console.log("this is diet screen")}
       />
     </View>
   );
