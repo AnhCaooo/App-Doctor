@@ -59,7 +59,7 @@ function BookingScreen({ navigation, route }) {
         </Text>
       </View>
 
-      <SubTabView />
+      <SubTabView doctor={doctor} />
 
       <View>
         <Button

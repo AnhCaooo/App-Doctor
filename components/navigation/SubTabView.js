@@ -5,12 +5,7 @@ import { StyleSheet, useWindowDimensions, Animated } from "react-native";
 import AboutDoctorScreen from "../screens/AboutDoctorScreen";
 import MedicalAppointmentScreen from "../screens/MedicalAppointmentScreen";
 
-const renderScene = SceneMap({
-  first: MedicalAppointmentScreen,
-  second: AboutDoctorScreen,
-});
-
-function SubTabView() {
+function SubTabView({ doctor }) {
   const layout = useWindowDimensions();
 
   const [index, setIndex] = useState(0);
@@ -18,6 +13,21 @@ function SubTabView() {
     { key: "first", title: "Make an appointment" },
     { key: "second", title: "About the doctor" },
   ]);
+
+  const AboutDoctorScreenRoute = () => {
+    return <AboutDoctorScreen doctor={doctor} />;
+  };
+
+  const renderScene = ({ route }) => {
+    switch (route.key) {
+      case "first":
+        return <MedicalAppointmentScreen />;
+      case "second":
+        return <AboutDoctorScreenRoute />;
+      default:
+        return null;
+    }
+  };
 
   return (
     <TabView
