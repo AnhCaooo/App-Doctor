@@ -58,6 +58,7 @@ function BookingScreen({ navigation, route }) {
           {"\u2022"} Work experiences - {doctor.experiences}
         </Text>
       </View>
+
       <SubTabView />
 
       <View>
@@ -94,8 +95,6 @@ const styles = StyleSheet.create({
   subTabView: {
     marginTop: 30,
   },
-
-  textContinue: {},
 });
 
 export default BookingScreen;

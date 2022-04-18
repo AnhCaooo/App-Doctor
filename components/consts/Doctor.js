@@ -9,7 +9,7 @@ const doctors = [
     avatar: require("../assets/General_Practioner_Female_Avatar.png"),
     description: "Doctor of the highest qualification category",
     experiences: "31 years",
-    details:
+    greeting:
       "Hi, my name is Claire Backer and my professional is General Practioner. I have 31 years experience in this area that I promise I can help you with your health problems",
   },
   {
@@ -22,7 +22,7 @@ const doctors = [
     avatar: require("../assets/General_Practioner_Male_Avatar.png"),
     description: "Doctor of the highest qualification category",
     experiences: "25 years",
-    details:
+    greeting:
       "Hi, my name is John Johnson and my professional is General Practioner. I have 25 years experience in this area that I promise I can help you with your health problems",
   },
   {
@@ -35,7 +35,7 @@ const doctors = [
     avatar: require("../assets/Dermatologist_Female_Avatar.png"),
     description: "Doctor of the highest qualification category",
     experiences: "30 years",
-    details:
+    greeting:
       "Hi, my name is Mary Philips and my professional is Dermatologist. I have 30 years experience in this area that I promise I can help you to improve your current skin",
   },
   {
@@ -48,7 +48,7 @@ const doctors = [
     avatar: require("../assets/Internale_Medicine_Male_Avatar.png"),
     description: "Doctor of the highest qualification category",
     experiences: "20 years",
-    details:
+    greeting:
       "Hi, my name is Dan Davidson and my professional is Internale Medicine. I have 20 years experience in this area that I promise I can help you with your health problems",
   },
   {
@@ -61,7 +61,7 @@ const doctors = [
     avatar: require("../assets/Internale_Medicine_Female_Avatar.png"),
     description: "Doctor of the highest qualification category",
     experiences: "28 years",
-    details:
+    greeting:
       "Hi, my name is Emma Backer and my professional is Internale Medicine. I have 28 years experience in this area that I promise I can help you with your health problems",
   },
   {
@@ -74,7 +74,7 @@ const doctors = [
     avatar: require("../assets/Herbal_Medicine_Female_Avatar.png"),
     description: "Doctor of the highest qualification category",
     experiences: "11 years",
-    details:
+    greeting:
       "Hi, my name is Shi Zhuang and my professional is Herbal Medicine. I have 11 years experience in this area that I promise I can help you with your health problems",
   },
   {
@@ -87,7 +87,7 @@ const doctors = [
     avatar: require("../assets/Herbal_Medicine_Male_Avatar.png"),
     description: "Doctor of the highest qualification category",
     experiences: "16 years",
-    details:
+    greeting:
       "Hi, my name is Long Lee and my professional is Herbal Medicine. I have 16 years experience in this area that I promise I can help you with your health problems",
   },
   {
@@ -100,7 +100,7 @@ const doctors = [
     avatar: require("../assets/Infectious_Disease_Male_2_Avatar.png"),
     description: "Doctor of the highest qualification category",
     experiences: "22 years",
-    details:
+    greeting:
       "Hi, my name is Erick Wilfrid and my professional is Infectious Disease. I have 22 years experience in this area that I promise I can help you with your health problems",
   },
   {
@@ -113,7 +113,7 @@ const doctors = [
     avatar: require("../assets/Infectious_Disease_Male_Avatar.png"),
     description: "Doctor of the highest qualification category",
     experiences: "31 years",
-    details:
+    greeting:
       "Hi, my name is Bale Orrell and my professional is Infectious Disease. I have 31 years experience in this area that I promise I can help you with your health problems",
   },
   {
@@ -126,7 +126,7 @@ const doctors = [
     avatar: require("../assets/Surgeon_Male_Avatar.png"),
     description: "Doctor of the highest qualification category",
     experiences: "35 years",
-    details:
+    greeting:
       "Hi, my name is Tylar Gareth and my professional is Surgeon. I have 35 years experience in this area that I promise I can help you with your health problems",
   },
   {
@@ -139,7 +139,7 @@ const doctors = [
     avatar: require("../assets/Surgeon_Female_Avatar.png"),
     description: "Doctor of the highest qualification category",
     experiences: "29 years",
-    details:
+    greeting:
       "Hi, my name is Taylor Backer and my professional is Surgeon. I have 29 years experience in this area that I promise I can help you with your health problems",
   },
   {
@@ -152,7 +152,7 @@ const doctors = [
     avatar: require("../assets/Veterinarian_Female_Avatar.png"),
     description: "Doctor of the highest qualification category",
     experiences: "5 years",
-    details:
+    greeting:
       "Hi, my name is Leyla Elsi and my professional is Veterinarian. I have 5 years experience in this area that I promise I can help you with your sweties",
   },
   {
@@ -165,7 +165,7 @@ const doctors = [
     avatar: require("../assets/Veterinarian_Male_Avatar.png"),
     description: "Doctor of the highest qualification category",
     experiences: "11 years",
-    details:
+    greeting:
       "Hi, my name is Kelvin Dublin and my professional is Veterinarian. I have 11 years experience in this area that I promise I can help you with your pets",
   },
 ];

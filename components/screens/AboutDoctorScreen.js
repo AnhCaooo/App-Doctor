@@ -1,12 +1,27 @@
 import React from "react";
-import { View, Text } from "react-native";
+import { StyleSheet, View, Text } from "react-native";
 
-function AboutDoctorScreen({ navigation }) {
+function AboutDoctorScreen({ navigation, route }) {
+  const doctor = route.params;
+  console.log(doctor);
+
   return (
-    <View style={{ flex: 1, backgroundColor: "#ff4081" }}>
-      <Text>This is doctor information</Text>
+    <View style={styles.headerContainer}>
+      <Text style={styles.headerText}>Doctor's greeting</Text>
     </View>
   );
 }
+
+const styles = StyleSheet.create({
+  headerContainer: {
+    flex: 1,
+    marginTop: 28,
+  },
+  headerText: {
+    fontSize: 16,
+    color: "gray",
+    paddingLeft: 14,
+  },
+});
 
 export default AboutDoctorScreen;
