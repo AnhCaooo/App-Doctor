@@ -1,6 +1,7 @@
-import React from "react";
-import { StyleSheet, View, Text, Button, ScrollView } from "react-native";
-import { Avatar, ListItem, Icon } from "react-native-elements";
+import React, { useState } from "react";
+import { StyleSheet, View, Text, Button } from "react-native";
+import { Avatar, Icon } from "react-native-elements";
+import SubTabView from "../navigation/SubTabView";
 
 function BookingScreen({ navigation, route }) {
   const doctor = route.params;
@@ -48,6 +49,7 @@ function BookingScreen({ navigation, route }) {
           <Icon name="star" size={20} color="orange" />
         </View>
       </View>
+
       <View style={styles.description}>
         <Text>
           {"\u2022"} {doctor.description}
@@ -56,16 +58,15 @@ function BookingScreen({ navigation, route }) {
           {"\u2022"} Work experiences - {doctor.experiences}
         </Text>
       </View>
-      <ScrollView
-        showsVerticalScrollIndicator={false}
-        contentContainerStyle={{ paddingBottom: 20 }}
-      >
+      <SubTabView />
+
+      <View>
         <Button
           title="Continue"
           style={styles.textContinue}
           onPress={() => console.log("Continue book appointment")}
         />
-      </ScrollView>
+      </View>
     </View>
   );
 }
@@ -90,6 +91,10 @@ const styles = StyleSheet.create({
     marginTop: 15,
     marginLeft: 20,
   },
+  subTabView: {
+    marginTop: 30,
+  },
+
   textContinue: {},
 });
 
