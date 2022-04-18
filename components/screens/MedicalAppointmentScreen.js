@@ -1,6 +1,7 @@
 import React from "react";
 import reactDom from "react-dom";
 import { StyleSheet, View, Text } from "react-native";
+import MeetingOptions from "../subcomponents/MeetingOptions";
 
 function MedicalAppointmentScreen({ navigation }) {
   return (
@@ -14,6 +15,9 @@ function MedicalAppointmentScreen({ navigation }) {
       </View>
       <View>
         <Text style={styles.blankContainer}></Text>
+      </View>
+      <View style={styles.meetingContainer}>
+        <MeetingOptions />
       </View>
     </View>
   );
@@ -49,6 +53,10 @@ const styles = StyleSheet.create({
     marginRight: 14,
     marginLeft: 14,
     borderBottomColor: "gray",
+  },
+  meetingContainer: {
+    marginTop: 20,
+    justifyContent: "space-between",
   },
 });
 

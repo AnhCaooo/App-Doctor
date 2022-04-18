@@ -7,7 +7,7 @@ export default function Headline() {
     <View style={styles.header}>
       <View>
         <Text style={{ fontSize: 28, fontWeight: "bold" }}>Dashboard</Text>
-        <Text style={{ fontSize: 16 }}>Friday, April 15</Text>
+        <Text style={{ fontSize: 16 }}>Monday, April 18</Text>
       </View>
       <Icon name="notifications" size={26} color={"grey"} />
     </View>

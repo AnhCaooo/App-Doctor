@@ -46,5 +46,7 @@ const styles = StyleSheet.create({
   routeTag: {
     alignItems: "center",
     lineHeight: 75,
+    backgroundColor: "#E6E6FA",
+    lineHeight: 0.75,
   },
 });
