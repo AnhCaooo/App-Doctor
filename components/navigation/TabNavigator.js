@@ -58,7 +58,15 @@ const TabNavigator = () => {
       })}
     >
       <Tab.Screen name="Home" component={HomeStackNavigator} />
-      <Tab.Screen name="Appointment" component={AppointmentScreen} />
+      <Tab.Screen
+        name="Appointment"
+        component={AppointmentScreen}
+        options={{
+          headerShown: true,
+          headerTitle: "Customer's Appointment",
+          headerTitleAlign: "center",
+        }}
+      />
       <Tab.Screen name="Diet" component={DietScreen} />
       <Tab.Screen name="Profile" component={ProfileScreen} />
     </Tab.Navigator>
