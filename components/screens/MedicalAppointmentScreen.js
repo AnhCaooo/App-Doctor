@@ -1,9 +1,12 @@
-import React from "react";
-import reactDom from "react-dom";
-import { StyleSheet, View, Text } from "react-native";
-import MeetingOptions from "../subcomponents/MeetingOptions";
+import React, { useState } from "react";
+import { StyleSheet, View, Text, Dimensions } from "react-native";
+import { CheckBox, Card, Icon, Button } from "react-native-elements";
 
 function MedicalAppointmentScreen({ navigation }) {
+  const [audioChat, setAudioChat] = useState(false);
+  const [videoConference, setVideoConference] = useState(false);
+  const [contactMeeting, setContactMeeting] = useState(false);
+
   return (
     <View style={styles.headerContainer}>
       <View>
@@ -13,11 +16,71 @@ function MedicalAppointmentScreen({ navigation }) {
         <Text style={styles.appointmentTime}>April 19th 2022, 10:00am</Text>
         <Text style={styles.changeDateContainer}>Change Date</Text>
       </View>
-      <View>
-        <Text style={styles.blankContainer}></Text>
-      </View>
-      <View style={styles.meetingContainer}>
-        <MeetingOptions />
+      <View style={styles.panel}>
+        <Card containerStyle={styles.card}>
+          <CheckBox
+            containerStyle={{
+              backgroundColor: "transparent",
+              borderWidth: 0,
+            }}
+            textStyle={styles.textStyle}
+            title="Audio Chat"
+            checkedIcon={
+              <Icon name="check-circle" type="feather" color="grey" size={22} />
+            }
+            uncheckedIcon={
+              <Icon
+                name="radio-button-unchecked"
+                type="material"
+                color="grey"
+                size={22}
+              />
+            }
+            checked={audioChat}
+            onPress={() => setAudioChat(!audioChat)}
+          />
+          <CheckBox
+            containerStyle={{ backgroundColor: "transparent", borderWidth: 0 }}
+            textStyle={styles.textStyle}
+            title="Video Conference"
+            checkedIcon={
+              <Icon name="check-circle" type="feather" color="grey" size={22} />
+            }
+            uncheckedIcon={
+              <Icon
+                name="radio-button-unchecked"
+                type="material"
+                color="grey"
+                size={22}
+              />
+            }
+            checked={videoConference}
+            onPress={() => setVideoConference(!videoConference)}
+          />
+          <CheckBox
+            containerStyle={{ backgroundColor: "transparent", borderWidth: 0 }}
+            textStyle={styles.textStyle}
+            title="Contact Meeting"
+            checkedIcon={
+              <Icon name="check-circle" type="feather" color="grey" size={22} />
+            }
+            uncheckedIcon={
+              <Icon
+                name="radio-button-unchecked"
+                type="material"
+                color="grey"
+                size={22}
+              />
+            }
+            checked={contactMeeting}
+            onPress={() => setContactMeeting(!contactMeeting)}
+          />
+        </Card>
+        <Button
+          containerStyle={styles.button}
+          title="Continue"
+          onPress={() => console.log("take me to the confirm page")}
+        />
       </View>
     </View>
   );
@@ -54,9 +117,31 @@ const styles = StyleSheet.create({
     marginLeft: 14,
     borderBottomColor: "gray",
   },
-  meetingContainer: {
-    marginTop: 20,
-    justifyContent: "space-between",
+  panel: {
+    width: Dimensions.get("window").width,
+    justifyContent: "center",
+    alignItems: "center",
+    position: "absolute",
+    marginTop: 70,
+  },
+  card: {
+    width: Dimensions.get("window").width,
+    borderBottomWidth: 0,
+    elevation: 0,
+    shadowOpacity: 0,
+  },
+  textStyle: {
+    fontWeight: "normal",
+    fontSize: 16,
+  },
+  button: {
+    margin: 50,
+    width: Dimensions.get("window").width * 0.88,
+    borderTopLeftRadius: 10,
+    borderTopRightRadius: 10,
+    borderBottomLeftRadius: 10,
+    borderBottomRightRadius: 10,
+    color: "#1E90FF",
   },
 });
 

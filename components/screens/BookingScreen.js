@@ -60,14 +60,6 @@ function BookingScreen({ navigation, route }) {
       </View>
 
       <SubTabView doctor={doctor} />
-
-      <View>
-        <Button
-          title="Continue"
-          style={styles.textContinue}
-          onPress={() => console.log("Continue book appointment")}
-        />
-      </View>
     </View>
   );
 }
