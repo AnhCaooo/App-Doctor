@@ -1,12 +1,22 @@
 import React, { useState } from "react";
-import { StyleSheet, View, Text, Dimensions } from "react-native";
+import {
+  StyleSheet,
+  View,
+  Text,
+  Dimensions,
+  Modal,
+  Image,
+  TouchableOpacity,
+} from "react-native";
 import { CheckBox, Card, Icon, Button } from "react-native-elements";
+import ModalPopUp from "../subcomponents/ModalPopUp";
 
 function MedicalAppointmentScreen({ navigation }) {
   const [audioChat, setAudioChat] = useState(false);
   const [videoConference, setVideoConference] = useState(false);
   const [contactMeeting, setContactMeeting] = useState(false);
 
+  const [visible, setVisible] = useState(false);
   return (
     <View style={styles.headerContainer}>
       <View>
@@ -80,10 +90,41 @@ function MedicalAppointmentScreen({ navigation }) {
         </Card>
       </View>
 
-      <View style={styles.button}>
+      <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
+        <ModalPopUp visible={visible}>
+          <View style={{ alignItems: "center" }}>
+            <View style={styles.header}>
+              <TouchableOpacity
+                onPress={() => {
+                  setVisible(false);
+                }}
+              >
+                <Image
+                  source={require("../assets/x.png")}
+                  style={{ height: 30, width: 30 }}
+                />
+              </TouchableOpacity>
+            </View>
+          </View>
+
+          <View style={{ alignItems: "center" }}>
+            <Image
+              source={require("../assets/successImg.png")}
+              style={{ height: 150, width: 150, marginVertical: 10 }}
+            />
+          </View>
+
+          <Text
+            style={{ marginVertical: 30, fontSize: 20, textAlign: "center" }}
+          >
+            Congratulations! Your booking was successful
+          </Text>
+        </ModalPopUp>
+
         <Button
+          containerStyle={styles.button}
           title="Continue"
-          onPress={() => navigation.navigate("Cofirming")}
+          onPress={() => setVisible(true)}
         />
       </View>
     </View>
@@ -144,6 +185,12 @@ const styles = StyleSheet.create({
     borderBottomLeftRadius: 10,
     borderBottomRightRadius: 10,
     color: "#1E90FF",
+  },
+  header: {
+    width: "100%",
+    height: 40,
+    alignItems: "flex-end",
+    justifyContent: "center",
   },
 });
 
