@@ -12,10 +12,12 @@ function MedicalAppointmentScreen({ navigation }) {
       <View>
         <Text style={styles.headerText}>Make an Appointment</Text>
       </View>
+
       <View style={styles.bookingContainer}>
         <Text style={styles.appointmentTime}>April 19th 2022, 10:00am</Text>
         <Text style={styles.changeDateContainer}>Change Date</Text>
       </View>
+
       <View style={styles.panel}>
         <Card containerStyle={styles.card}>
           <CheckBox
@@ -76,10 +78,12 @@ function MedicalAppointmentScreen({ navigation }) {
             onPress={() => setContactMeeting(!contactMeeting)}
           />
         </Card>
+      </View>
+
+      <View style={styles.button}>
         <Button
-          containerStyle={styles.button}
           title="Continue"
-          onPress={() => console.log("take me to the confirm page")}
+          onPress={() => navigation.navigate("Cofirming")}
         />
       </View>
     </View>
@@ -111,12 +115,6 @@ const styles = StyleSheet.create({
     fontSize: 20,
     marginBottom: 20,
   },
-  blankContainer: {
-    borderBottomWidth: 0.5,
-    marginRight: 14,
-    marginLeft: 14,
-    borderBottomColor: "gray",
-  },
   panel: {
     width: Dimensions.get("window").width,
     justifyContent: "center",
@@ -126,17 +124,21 @@ const styles = StyleSheet.create({
   },
   card: {
     width: Dimensions.get("window").width,
+    borderTopWidth: 1,
     borderBottomWidth: 0,
     elevation: 0,
     shadowOpacity: 0,
+    backgroundColor: "transparent",
   },
   textStyle: {
     fontWeight: "normal",
     fontSize: 16,
   },
   button: {
-    margin: 50,
-    width: Dimensions.get("window").width * 0.88,
+    right: 20,
+    left: 20,
+    bottom: 20,
+    position: "absolute",
     borderTopLeftRadius: 10,
     borderTopRightRadius: 10,
     borderBottomLeftRadius: 10,

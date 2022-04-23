@@ -1,9 +1,33 @@
 import React, { useState } from "react";
 import { TabView, SceneMap, TabBar } from "react-native-tab-view";
 import { StyleSheet, useWindowDimensions, Animated } from "react-native";
-
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import AboutDoctorScreen from "../screens/AboutDoctorScreen";
 import MedicalAppointmentScreen from "../screens/MedicalAppointmentScreen";
+import ConfirmScreen from "../screens/ConfirmScreen";
+
+const Stack = createNativeStackNavigator();
+
+const MedicalAppointmentStack = () => {
+  return (
+    <Stack.Navigator>
+      <Stack.Screen
+        name="MedicalStack"
+        component={MedicalAppointmentScreen}
+        options={{
+          headerShown: false,
+        }}
+      />
+      <Stack.Screen
+        name="Cofirming"
+        component={ConfirmScreen}
+        options={{
+          headerShown: false,
+        }}
+      />
+    </Stack.Navigator>
+  );
+};
 
 function SubTabView({ doctor }) {
   const layout = useWindowDimensions();
@@ -21,7 +45,7 @@ function SubTabView({ doctor }) {
   const renderScene = ({ route }) => {
     switch (route.key) {
       case "first":
-        return <MedicalAppointmentScreen />;
+        return <MedicalAppointmentStack />;
       case "second":
         return <AboutDoctorScreenRoute />;
       default:

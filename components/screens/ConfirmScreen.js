@@ -4,10 +4,16 @@ import { StyleSheet, View, Text, Button } from "react-native";
 function ConfirmScreen({ navigation }) {
   return (
     <View style={styles.container}>
-      <Text style={styles.header}>This is ConfirmScreen</Text>
+      <Text>
+        Please check again your information before submit your appointment
+      </Text>
       <Button
-        title="Please check again your information before submit your appointment"
-        onPress={() => console.log("this is ConfirmScreen")}
+        title="Back"
+        onPress={() => navigation.navigate("MedicalStack")}
+      />
+      <Button
+        title="Submit"
+        onPress={() => console.log("Your appointment is submitted")}
       />
     </View>
   );
