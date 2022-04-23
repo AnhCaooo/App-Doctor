@@ -6,9 +6,6 @@ function AboutDoctorScreen({ navigation, doctor }) {
     <View style={styles.headerContainer}>
       <Text style={styles.headerText}>Doctor's greeting</Text>
       <Text style={styles.greetingText}>{doctor.greeting}</Text>
-      <View>
-        <Text style={styles.blankContainer}></Text>
-      </View>
     </View>
   );
 }
@@ -22,18 +19,13 @@ const styles = StyleSheet.create({
     fontSize: 16,
     color: "gray",
     paddingLeft: 14,
+    marginBottom: 10,
   },
   greetingText: {
-    fontSize: 18,
+    fontSize: 16,
     marginRight: 14,
     marginLeft: 14,
     marginBottom: 20,
-  },
-  blankContainer: {
-    borderBottomWidth: 0.5,
-    marginRight: 14,
-    marginLeft: 14,
-    borderBottomColor: "gray",
   },
 });
 
