@@ -1,7 +1,7 @@
 const pageImages = [
   {
     id: "1",
-    name: "Appointments",
+    name: "Appointment",
     image: require("../assets/Appointment.png"),
   },
   {

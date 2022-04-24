@@ -84,7 +84,14 @@ export default function HomeScreen({ navigation }) {
               paddingLeft: 20,
               paddingVertical: 30,
             }}
-            renderItem={({ item, index }) => <QuickRoute page={item} />}
+            renderItem={({ item, index }) => (
+              <TouchableOpacity
+                activeOpacity={1}
+                onPress={() => navigation.navigate(item)}
+              >
+                <QuickRoute page={item} />
+              </TouchableOpacity>
+            )}
           />
         </View>
       </ScrollView>

@@ -5,11 +5,7 @@ import { Button } from "react-native-elements";
 function AppointmentScreen({ navigation }) {
   return (
     <View style={styles.container}>
-      <View style={styles.subHeader}>
-        <Text style={{ fontSize: 16 }}>
-          Here is your appointment information
-        </Text>
-      </View>
+      <Text style={{ fontSize: 16 }}>Here is your appointment information</Text>
 
       <View style={styles.buttonContainer}>
         <View style={styles.button}>
@@ -29,6 +25,8 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     marginTop: 28,
+    alignItems: "center",
+    justifyContent: "center",
   },
   header: {
     marginLeft: 20,
