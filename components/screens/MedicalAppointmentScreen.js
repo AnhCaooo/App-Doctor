@@ -4,18 +4,14 @@ import {
   View,
   Text,
   Dimensions,
-  Modal,
   Image,
   TouchableOpacity,
 } from "react-native";
-import { CheckBox, Card, Icon, Button } from "react-native-elements";
+import { Card, Button } from "react-native-elements";
+import MeetingCheckBox from "../subcomponents/MeetingCheckBox";
 import ModalPopUp from "../subcomponents/ModalPopUp";
 
 function MedicalAppointmentScreen({ navigation }) {
-  const [audioChat, setAudioChat] = useState(false);
-  const [videoConference, setVideoConference] = useState(false);
-  const [contactMeeting, setContactMeeting] = useState(false);
-
   const [visible, setVisible] = useState(false);
   return (
     <View style={styles.headerContainer}>
@@ -30,63 +26,7 @@ function MedicalAppointmentScreen({ navigation }) {
 
       <View style={styles.panel}>
         <Card containerStyle={styles.card}>
-          <CheckBox
-            containerStyle={{
-              backgroundColor: "transparent",
-              borderWidth: 0,
-            }}
-            textStyle={styles.textStyle}
-            title="Audio Chat"
-            checkedIcon={
-              <Icon name="check-circle" type="feather" color="grey" size={22} />
-            }
-            uncheckedIcon={
-              <Icon
-                name="radio-button-unchecked"
-                type="material"
-                color="grey"
-                size={22}
-              />
-            }
-            checked={audioChat}
-            onPress={() => setAudioChat(!audioChat)}
-          />
-          <CheckBox
-            containerStyle={{ backgroundColor: "transparent", borderWidth: 0 }}
-            textStyle={styles.textStyle}
-            title="Video Conference"
-            checkedIcon={
-              <Icon name="check-circle" type="feather" color="grey" size={22} />
-            }
-            uncheckedIcon={
-              <Icon
-                name="radio-button-unchecked"
-                type="material"
-                color="grey"
-                size={22}
-              />
-            }
-            checked={videoConference}
-            onPress={() => setVideoConference(!videoConference)}
-          />
-          <CheckBox
-            containerStyle={{ backgroundColor: "transparent", borderWidth: 0 }}
-            textStyle={styles.textStyle}
-            title="Contact Meeting"
-            checkedIcon={
-              <Icon name="check-circle" type="feather" color="grey" size={22} />
-            }
-            uncheckedIcon={
-              <Icon
-                name="radio-button-unchecked"
-                type="material"
-                color="grey"
-                size={22}
-              />
-            }
-            checked={contactMeeting}
-            onPress={() => setContactMeeting(!contactMeeting)}
-          />
+          <MeetingCheckBox />
         </Card>
       </View>
 
@@ -170,10 +110,6 @@ const styles = StyleSheet.create({
     elevation: 0,
     shadowOpacity: 0,
     backgroundColor: "transparent",
-  },
-  textStyle: {
-    fontWeight: "normal",
-    fontSize: 16,
   },
   button: {
     right: 20,
