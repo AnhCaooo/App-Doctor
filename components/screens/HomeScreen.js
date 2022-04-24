@@ -16,7 +16,7 @@ import Card from "../subcomponents/Card";
 import QuickRoute from "../subcomponents/QuickRoute";
 import doctors from "../consts/Doctor";
 import pageImages from "../consts/PageImages";
-
+import SearchDoctor from "../subcomponents/SearchDoctor";
 export default function HomeScreen({ navigation }) {
   const [activeCardIndex, setActiveCardIndex] = useState(0);
 
@@ -35,13 +35,8 @@ export default function HomeScreen({ navigation }) {
           <Text style={styles.textHeader}>Find your doctor here</Text>
         </View>
 
-        <View style={styles.serachInputContainer}>
-          <TextInput
-            placeholder="Type your doctor's name"
-            style={{ fontSize: 16, paddingLeft: 15 }}
-          />
-
-          <Icon name="search" size={30} style={{ marginRight: 10 }} />
+        <View>
+          <SearchDoctor />
         </View>
 
         <View>
@@ -122,19 +117,5 @@ const styles = StyleSheet.create({
   textHeaderQuickAccess: {
     fontSize: 26,
     fontWeight: "bold",
-  },
-  serachInputContainer: {
-    height: 50,
-    backgroundColor: "white",
-    marginTop: 15,
-    marginLeft: 20,
-    marginRight: 20,
-    borderRadius: 10,
-    flexDirection: "row",
-    alignItems: "center",
-    borderWidth: 1.5,
-    borderBottomWidth: 1,
-    borderColor: "#b4b4b4",
-    justifyContent: "space-between",
   },
 });
