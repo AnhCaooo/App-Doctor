@@ -1,6 +1,7 @@
-import React, { useState } from "react";
-import { StyleSheet, Text, View } from "react-native";
+import React, { useState, useEffect } from "react";
+import { StyleSheet, Text, View, FlatList } from "react-native";
 import { SearchBar } from "react-native-elements";
+import doctors from "../consts/Doctor";
 
 function SearchDoctor() {
   const [search, setSearch] = useState("");

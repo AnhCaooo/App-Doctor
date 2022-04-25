@@ -22,7 +22,7 @@ function BookingScreen({ navigation, route }) {
               borderColor: "#1E90FF",
             }}
             rounded
-            size="medium"
+            size="large"
             source={doctor.avatar}
           />
           <View style={{ marginLeft: 8 }}>

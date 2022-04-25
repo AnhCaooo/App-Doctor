@@ -68,7 +68,15 @@ const TabNavigator = () => {
         }}
       />
       <Tab.Screen name="Diet" component={DietScreen} />
-      <Tab.Screen name="Profile" component={ProfileScreen} />
+      <Tab.Screen
+        name="Profile"
+        component={ProfileScreen}
+        options={{
+          headerShown: true,
+          headerTitle: "Personal Infomation",
+          headerTitleAlign: "center",
+        }}
+      />
     </Tab.Navigator>
   );
 };

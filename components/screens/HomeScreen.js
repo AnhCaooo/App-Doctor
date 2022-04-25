@@ -35,13 +35,9 @@ export default function HomeScreen({ navigation }) {
           <Text style={styles.textHeader}>Find your doctor here</Text>
         </View>
 
-        <View>
-          <SearchDoctor />
-        </View>
+        <SearchDoctor />
 
-        <View>
-          <CategoryList />
-        </View>
+        <CategoryList />
 
         <View>
           <FlatList

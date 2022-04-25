@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, View, Modal } from "react-native";
 import { SearchBar } from "react-native-elements";
 
 function SearchDiet() {
@@ -8,6 +8,7 @@ function SearchDiet() {
   const updateSearch = (userSearch) => {
     setSearch(userSearch);
   };
+
   return (
     <View>
       <SearchBar
