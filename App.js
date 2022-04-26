@@ -2,12 +2,12 @@ import React from "react";
 import { StyleSheet } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 
-import TabNavigator from "./components/navigation/TabNavigator";
+import StackNavigator from "./components/navigation/StackNavigator";
 
 export default function App() {
   return (
     <NavigationContainer>
-      <TabNavigator />
+      <StackNavigator />
     </NavigationContainer>
   );
 }

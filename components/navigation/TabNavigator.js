@@ -33,7 +33,7 @@ const HomeStackNavigator = () => {
   );
 };
 
-const TabNavigator = () => {
+const HomeTabNavigator = () => {
   return (
     <Tab.Navigator
       screenOptions={({ route }) => ({
@@ -57,7 +57,11 @@ const TabNavigator = () => {
         headerShown: false,
       })}
     >
-      <Tab.Screen name="Home" component={HomeStackNavigator} />
+      <Tab.Screen
+        name="Home"
+        component={HomeStackNavigator}
+        options={{ headerShown: false }}
+      />
       <Tab.Screen
         name="Appointment"
         component={AppointmentScreen}
@@ -81,4 +85,4 @@ const TabNavigator = () => {
   );
 };
 
-export default TabNavigator;
+export default HomeTabNavigator;

@@ -16,7 +16,7 @@ import DateTimePicker from "@react-native-community/datetimepicker";
 
 function MedicalAppointmentScreen({ navigation, doctor }) {
   const [appointment, setAppointment] = useState({
-    doctorId: doctor.id,
+    doctor: doctor,
     date: new Date(),
     meeting: "",
   });
@@ -87,7 +87,7 @@ function MedicalAppointmentScreen({ navigation, doctor }) {
             textStyle={{ fontSize: 18 }}
             circleStyle={{ size: 18 }}
             selectedBtn={(meeting) =>
-              setAppointment({ ...appointment, meeting: meeting.label })
+              setAppointment({ ...appointment, meeting: meeting })
             }
             icon={<Icon name="check-circle" size={25} color="#2c9dd1" />}
           />
@@ -127,7 +127,7 @@ function MedicalAppointmentScreen({ navigation, doctor }) {
 
         <Button
           containerStyle={styles.button}
-          title="Continue"
+          title="Book"
           onPress={() => {
             setVisible(true);
             console.log(appointment);
