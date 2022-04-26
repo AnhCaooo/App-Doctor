@@ -15,15 +15,6 @@ const LoginScreen = ({ navigation }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  useEffect(() => {
-    const unsubcribe = auth.onAuthStateChanged((user) => {
-      if (user) {
-        navigation.navigate("HomeScreen");
-      }
-    });
-    return unsubcribe;
-  }, []);
-
   const handleSignUp = () => {
     auth
       .createUserWithEmailAndPassword(email, password)
@@ -39,13 +30,17 @@ const LoginScreen = ({ navigation }) => {
       .signInWithEmailAndPassword(email, password)
       .then((userCredentials) => {
         const user = userCredentials.user;
+        navigation.navigate("HomeScreen");
         console.log("Logged in with", user.email);
       })
       .catch((error) => alert(error.message));
   };
 
   return (
-    <KeyboardAvoidingView style={styles.container} behavior="padding">
+    <View style={styles.container}>
+      <View>
+        <Text style={styles.greeting}>Welcome to Doctor App!</Text>
+      </View>
       <View style={styles.inputContainer}>
         <TextInput
           placeholder="Email"
@@ -78,7 +73,7 @@ const LoginScreen = ({ navigation }) => {
           titleStyle={styles.buttonOutlineText}
         />
       </View>
-    </KeyboardAvoidingView>
+    </View>
   );
 };
 
@@ -87,6 +82,11 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
+    backgroundColor: "white",
+  },
+  greeting: {
+    fontSize: 28,
+    fontWeight: "bold",
   },
   inputContainer: {
     width: "80%",
@@ -96,7 +96,9 @@ const styles = StyleSheet.create({
     paddingHorizontal: 15,
     paddingVertical: 10,
     borderRadius: 10,
-    marginTop: 5,
+    marginTop: 10,
+    borderColor: "green",
+    borderWidth: 1,
   },
   buttonContainer: {
     width: "60%",
@@ -124,6 +126,8 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: "700",
   },
+  textContainer: {},
+  text: {},
 });
 
 export default LoginScreen;
