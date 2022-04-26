@@ -9,6 +9,7 @@ import {
 } from "react-native";
 import { Card, Button, Icon } from "react-native-elements";
 import RadioButtonRN from "radio-buttons-react-native";
+import { format } from "date-fns";
 import ModalPopUp from "../subcomponents/ModalPopUp";
 import meetings from "../consts/Meetings";
 import DateTimePicker from "@react-native-community/datetimepicker";
@@ -49,7 +50,7 @@ function MedicalAppointmentScreen({ navigation, doctor }) {
         <View>
           <Text style={styles.headerText}>Make an Appointment</Text>
           <Text style={styles.appointmentTime}>
-            {appointment.date.toLocaleString()}
+            {format(appointment.date, "EEE, MMM dd HH:mm aaa")}
           </Text>
         </View>
         <View style={{ marginTop: 10 }}>
@@ -145,13 +146,12 @@ const styles = StyleSheet.create({
   headerText: {
     fontSize: 18,
     color: "gray",
-    paddingLeft: 14,
   },
   bookingContainer: {
     flexDirection: "row",
     justifyContent: "space-between",
     marginRight: 14,
-    marginLeft: 14,
+    marginLeft: 20,
   },
   changeDateContainer: {
     fontSize: 16,
@@ -168,7 +168,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     position: "absolute",
-    marginTop: 90,
+    marginTop: 80,
   },
   card: {
     width: Dimensions.get("window").width,
