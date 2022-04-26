@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   StyleSheet,
   View,
@@ -7,26 +7,89 @@ import {
   Image,
   TouchableOpacity,
 } from "react-native";
-import { Card, Button } from "react-native-elements";
-import MeetingCheckBox from "../subcomponents/MeetingCheckBox";
+import { Card, Button, Icon } from "react-native-elements";
+import RadioButtonRN from "radio-buttons-react-native";
 import ModalPopUp from "../subcomponents/ModalPopUp";
+import meetings from "../consts/Meetings";
+import DateTimePicker from "@react-native-community/datetimepicker";
 
-function MedicalAppointmentScreen({ navigation }) {
+function MedicalAppointmentScreen({ navigation, doctor }) {
+  const [appointment, setAppointment] = useState({
+    doctorId: doctor.id,
+    date: new Date(),
+    meeting: "",
+  });
+  const [mode, setMode] = useState("date");
+  const [show, setShow] = useState(false);
+
+  const onChange = (event, selectedDate) => {
+    const currentDate = selectedDate;
+    setShow(false);
+    setAppointment({ ...appointment, date: currentDate });
+  };
+
+  const showMode = (currentMode) => {
+    setShow(true);
+    setMode(currentMode);
+  };
+
+  const showDatepicker = () => {
+    showMode("date");
+  };
+
+  const showTimepicker = () => {
+    showMode("time");
+  };
+
   const [visible, setVisible] = useState(false);
+
   return (
     <View style={styles.headerContainer}>
-      <View>
-        <Text style={styles.headerText}>Make an Appointment</Text>
-      </View>
-
       <View style={styles.bookingContainer}>
-        <Text style={styles.appointmentTime}>April 19th 2022, 10:00am</Text>
-        <Text style={styles.changeDateContainer}>Change Date</Text>
+        <View>
+          <Text style={styles.headerText}>Make an Appointment</Text>
+          <Text style={styles.appointmentTime}>
+            {appointment.date.toLocaleString()}
+          </Text>
+        </View>
+        <View style={{ marginTop: 10 }}>
+          <Button
+            type="clear"
+            onPress={showDatepicker}
+            title="Change Date"
+            titleStyle={styles.changeDateContainer}
+          />
+          <Button
+            type="clear"
+            onPress={showTimepicker}
+            title="Change Time"
+            titleStyle={styles.changeDateContainer}
+          />
+          {show && (
+            <DateTimePicker
+              testID="dateTimePicker"
+              value={appointment.date}
+              mode={mode}
+              is24Hour={true}
+              themeVariant="light"
+              onChange={onChange}
+            />
+          )}
+        </View>
       </View>
 
       <View style={styles.panel}>
         <Card containerStyle={styles.card}>
-          <MeetingCheckBox />
+          <RadioButtonRN
+            data={meetings}
+            boxStyle={{ borderWidth: 0 }}
+            textStyle={{ fontSize: 18 }}
+            circleStyle={{ size: 18 }}
+            selectedBtn={(meeting) =>
+              setAppointment({ ...appointment, meeting: meeting.label })
+            }
+            icon={<Icon name="check-circle" size={25} color="#2c9dd1" />}
+          />
         </Card>
       </View>
 
@@ -64,7 +127,10 @@ function MedicalAppointmentScreen({ navigation }) {
         <Button
           containerStyle={styles.button}
           title="Continue"
-          onPress={() => setVisible(true)}
+          onPress={() => {
+            setVisible(true);
+            console.log(appointment);
+          }}
         />
       </View>
     </View>
@@ -74,10 +140,10 @@ function MedicalAppointmentScreen({ navigation }) {
 const styles = StyleSheet.create({
   headerContainer: {
     flex: 1,
-    marginTop: 28,
+    marginTop: 18,
   },
   headerText: {
-    fontSize: 16,
+    fontSize: 18,
     color: "gray",
     paddingLeft: 14,
   },
@@ -88,20 +154,21 @@ const styles = StyleSheet.create({
     marginLeft: 14,
   },
   changeDateContainer: {
-    fontSize: 14,
+    fontSize: 16,
     color: "#CD853F",
-    fontWeight: "bold",
+    //fontWeight: "bold",
   },
   appointmentTime: {
     fontSize: 20,
     marginBottom: 20,
+    marginTop: 10,
   },
   panel: {
     width: Dimensions.get("window").width,
     justifyContent: "center",
     alignItems: "center",
     position: "absolute",
-    marginTop: 70,
+    marginTop: 90,
   },
   card: {
     width: Dimensions.get("window").width,

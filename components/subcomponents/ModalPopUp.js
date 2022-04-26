@@ -4,6 +4,7 @@ import { StyleSheet, Modal, View, Animated } from "react-native";
 function ModalPopUp({ visible, children }) {
   const [showModal, setShowModal] = useState(visible);
   const scaleValue = useRef(new Animated.Value(0)).current;
+
   useEffect(() => {
     toggleModal();
   }, [visible]);

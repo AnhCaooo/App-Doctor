@@ -14,6 +14,7 @@ function BookingScreen({ navigation, route }) {
             flexDirection: "row",
             alignItems: "center",
             justifyContent: "flex-end",
+            marginVertical: 5,
           }}
         >
           <Avatar

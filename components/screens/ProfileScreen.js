@@ -23,6 +23,24 @@ export default function ProfileScreen() {
         title="Change Picture"
         onPress={() => console.log("Change this picture!")}
       />
+
+      <Button
+        type="solid"
+        containerStyle={styles.containerStyle}
+        buttonStyle={styles.buttonContainer}
+        titleStyle={{ color: "black", fontSize: 18 }}
+        title="Edit Profile"
+        onPress={() => console.log("Edit my profile!")}
+      />
+
+      <Button
+        type="solid"
+        containerStyle={styles.containerStyle}
+        buttonStyle={styles.buttonContainer}
+        titleStyle={{ color: "black", fontSize: 18 }}
+        title="Log Out"
+        onPress={() => console.log("Log me out!")}
+      />
     </View>
   );
 }
@@ -32,17 +50,16 @@ const styles = StyleSheet.create({
     flexDirection: "column",
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "white",
+    //backgroundColor: "white",
   },
   avatarStyle: {
     borderWidth: 1,
     borderColor: "#A9A9A9",
     borderWidth: 1,
-    //backgroundColor: "white",
   },
   containerStyle: {
     marginHorizontal: 50,
-    //marginTop: 20,
+    marginVertical: 20,
     width: 160,
   },
   buttonContainer: {

@@ -16,6 +16,9 @@ function SubTabView({ doctor }) {
     { key: "second", title: "About the doctor" },
   ]);
 
+  const MedicalAppointmentRoute = () => {
+    return <MedicalAppointmentScreen doctor={doctor} />;
+  };
   const AboutDoctorScreenRoute = () => {
     return <AboutDoctorScreen doctor={doctor} />;
   };
@@ -23,7 +26,7 @@ function SubTabView({ doctor }) {
   const renderScene = ({ route }) => {
     switch (route.key) {
       case "first":
-        return <MedicalAppointmentScreen />;
+        return <MedicalAppointmentRoute />;
       case "second":
         return <AboutDoctorScreenRoute />;
       default:
