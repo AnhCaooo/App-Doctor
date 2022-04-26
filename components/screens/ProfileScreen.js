@@ -1,8 +1,18 @@
 import React from "react";
 import { StyleSheet, View, Text } from "react-native";
 import { Avatar, Input, Button } from "react-native-elements";
+import { auth } from "../../firebase";
 
-export default function ProfileScreen() {
+export default function ProfileScreen({ navigation }) {
+  const handleSignOut = () => {
+    auth
+      .signOut()
+      .then(() => {
+        navigation.navigate("LoginScreen");
+      })
+      .catch((err) => alert(err.message));
+  };
+
   return (
     <View style={styles.container}>
       <Avatar
@@ -14,7 +24,7 @@ export default function ProfileScreen() {
         activeOpacity={0.7}
         containerStyle={{ marginVertical: 20 }}
       />
-
+      <Text style={styles.textContainer}>{auth.currentUser?.email} </Text>
       <Button
         type="solid"
         containerStyle={styles.containerStyle}
@@ -39,7 +49,7 @@ export default function ProfileScreen() {
         buttonStyle={styles.buttonContainer}
         titleStyle={{ color: "black", fontSize: 18 }}
         title="Log Out"
-        onPress={() => console.log("Log me out!")}
+        onPress={handleSignOut}
       />
     </View>
   );
@@ -56,6 +66,10 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: "#A9A9A9",
     borderWidth: 1,
+  },
+  textContainer: {
+    fontSize: 20,
+    fontWeight: "bold",
   },
   containerStyle: {
     marginHorizontal: 50,
