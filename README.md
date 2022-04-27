@@ -16,15 +16,15 @@ This Doctor Mobile application allows customers to create their account for heal
 ### Home Screen
 
 <p flexDirection="row">
-<img src="./components/assets/HomeScreenProduct.png" width="200" height="400" />
-<img src="./components/assets/FilterScreenProduct.png" width="200" height="400" />
+<img src="./components/assets/HomeScreenProduct.png" width="300" height="600" />
+<img src="./components/assets/FilterScreenProduct.png" width="300" height="600" />
 </p>
 
 ### Booking Screen
 
 <p flexDirection="row">
-<img src="./components/assets/BookAppointmentProduct.png" width="200" height="400" />
-<img src="./components/assets/DoctorInfo.png" width="200" height="400" />
+<img src="./components/assets/BookAppointmentProduct.png" width="300" height="600" />
+<img src="./components/assets/DoctorInfo.png" width="300" height="600" />
 </p>
 
 # Main Features
