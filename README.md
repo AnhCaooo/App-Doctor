@@ -9,7 +9,7 @@ Mobile application project created with Expo, React Native, Firebase and some wo
 - [Technologies](#technologies)
 - [Quick Start](#quick-start)
 
-# General Info
+## General Info
 
 This Doctor Mobile application allows customers to create their account for health checking and book an appointment with their desired doctors.
 
@@ -27,7 +27,7 @@ This Doctor Mobile application allows customers to create their account for heal
 <img src="./components/assets/DoctorInfo.png" width="300" height="600" />
 </p>
 
-# Main Features
+## Main Features
 
 - Complex navigation (Tab, Stack, TabView)
 - Connect to Firebase (Authentication)
@@ -36,7 +36,7 @@ This Doctor Mobile application allows customers to create their account for heal
 - Search doctor, filter by First Name and Last Name
 - Book an appointment with the doctor by choosing time and select one meeting option. There are 3 options for meeting with the doctor: Audio Chat, Video Conference, Contact Meeting.
 
-# Technologies
+## Technologies
 
 - Expo
 - React Native
@@ -48,4 +48,24 @@ This Doctor Mobile application allows customers to create their account for heal
 - Radio Button React Native V1
 - Firebase Authentication V8
 
-# Quick Start
+## Quick Start
+
+Here are some steps to run this project:
+
+1. Clone the project
+
+```
+git@github.com:AnhCaooo/App-Doctor.git
+```
+
+2. Download node_modules
+
+```
+npm install
+```
+
+3. Run Expo
+
+```
+expo start
+```
