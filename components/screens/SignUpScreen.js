@@ -1,38 +1,30 @@
-import { NavigationContainer } from "@react-navigation/native";
-import React, { useState, useEffect } from "react";
-import {
-  StyleSheet,
-  Text,
-  View,
-  KeyboardAvoidingView,
-  TextInput,
-} from "react-native";
+import { StyleSheet, Text, View, TextInput } from "react-native";
+import React, { useState } from "react";
 import { Button } from "react-native-elements";
 import { auth } from "../../firebase";
 
-const LoginScreen = ({ navigation }) => {
+const SignUpScreen = ({ navigation }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const navigateSignUp = () => {
-    navigation.navigate("SignUpScreen");
-  };
-
-  const handleLogin = () => {
+  const handleSignUp = () => {
     auth
-      .signInWithEmailAndPassword(email, password)
+      .createUserWithEmailAndPassword(email, password)
       .then((userCredentials) => {
         const user = userCredentials.user;
-        navigation.navigate("HomeScreen");
-        console.log("Logged in with", user.email);
+        console.log("Register new user: ", user.email);
       })
       .catch((error) => alert(error.message));
+  };
+
+  const navigateLogin = () => {
+    navigation.navigate("LoginScreen");
   };
 
   return (
     <View style={styles.container}>
       <View>
-        <Text style={styles.greeting}>Welcome to Doctor App!</Text>
+        <Text style={styles.greeting}>Register your account!</Text>
       </View>
       <View style={styles.inputContainer}>
         <TextInput
@@ -53,18 +45,20 @@ const LoginScreen = ({ navigation }) => {
       <View style={styles.buttonContainer}>
         <Button
           containerStyle={styles.button}
-          buttonStyle={styles.button}
-          onPress={handleLogin}
-          title="Login"
-          titleStyle={styles.buttonText}
-        />
-        <Button
-          containerStyle={styles.button}
           buttonStyle={[styles.button, styles.buttonOutline]}
-          onPress={navigateSignUp}
+          onPress={handleSignUp}
           title="Register"
           titleStyle={styles.buttonOutlineText}
         />
+        <View style={styles.textContainer}>
+          <Text>Already have account?</Text>
+          <Button
+            type="clear"
+            title="Log In"
+            titleStyle={styles.text}
+            onPress={navigateLogin}
+          />
+        </View>
       </View>
     </View>
   );
@@ -119,8 +113,15 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: "700",
   },
-  textContainer: {},
-  text: {},
+  textContainer: {
+    flexDirection: "row",
+    justifyContent: "center",
+    alignItems: "center",
+    marginTop: 10,
+  },
+  text: {
+    fontSize: 15,
+  },
 });
 
-export default LoginScreen;
+export default SignUpScreen;
