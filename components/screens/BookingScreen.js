@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { StyleSheet, View, Text, Button } from "react-native";
+import React from "react";
+import { StyleSheet, View, Text } from "react-native";
 import { Avatar, Icon } from "react-native-elements";
 import SubTabView from "../navigation/SubTabView";
 

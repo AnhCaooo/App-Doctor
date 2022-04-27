@@ -1,13 +1,5 @@
-import React, { useState, useEffect } from "react";
-import {
-  StyleSheet,
-  View,
-  FlatList,
-  Text,
-  Dimensions,
-  Image,
-  TouchableOpacity,
-} from "react-native";
+import React from "react";
+import { StyleSheet, View, Text, Dimensions, Image } from "react-native";
 
 const { width } = Dimensions.get("screen");
 const cardWidth = width / 1.9;

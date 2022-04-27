@@ -1,5 +1,5 @@
 import React from "react";
-import { StyleSheet, View, Text, Button } from "react-native";
+import { StyleSheet, View } from "react-native";
 import SearchDiet from "../subcomponents/SearchDiet";
 
 function DietScreen({ navigation }) {

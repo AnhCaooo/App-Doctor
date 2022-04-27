@@ -8,6 +8,7 @@ function ModalPopUp({ visible, children }) {
   useEffect(() => {
     toggleModal();
   }, [visible]);
+
   const toggleModal = () => {
     if (visible) {
       setShowModal(true);
@@ -25,6 +26,7 @@ function ModalPopUp({ visible, children }) {
       }).start();
     }
   };
+
   return (
     <Modal transparent visible={showModal}>
       <View style={styles.modalBackground}>

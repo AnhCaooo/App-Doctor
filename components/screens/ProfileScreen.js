@@ -1,6 +1,6 @@
 import React from "react";
 import { StyleSheet, View, Text } from "react-native";
-import { Avatar, Input, Button } from "react-native-elements";
+import { Avatar, Button } from "react-native-elements";
 import { auth } from "../../firebase";
 
 export default function ProfileScreen({ navigation }) {
