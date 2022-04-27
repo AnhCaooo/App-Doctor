@@ -8,7 +8,7 @@ import {
   TouchableOpacity,
   Dimensions,
 } from "react-native";
-import { Input, Icon, SearchBar } from "react-native-elements";
+import { SearchBar } from "react-native-elements";
 import Headline from "../subcomponents/Headline";
 import CategoryList from "../subcomponents/CategoryList";
 import Card from "../subcomponents/Card";

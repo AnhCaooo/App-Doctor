@@ -13,6 +13,7 @@ const SignUpScreen = ({ navigation }) => {
       .then((userCredentials) => {
         const user = userCredentials.user;
         console.log("Register new user: ", user.email);
+        navigateLogin();
       })
       .catch((error) => alert(error.message));
   };
