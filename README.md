@@ -13,10 +13,19 @@ Mobile application project created with Expo, React Native, Firebase and some wo
 
 This Doctor Mobile application allows customers to create their account for health checking and book an appointment with their desired doctors.
 
-![Home Screen](./components/assets/HomeScreenProduct.png | width="400" height="790")
-![Filtering Function in Home Screen](./components/assets/FilterScreenProduct.png |width="400" height="790")
-![Book Appointment](./components/assets/BookAppointmentProduct.png |width="400" height="790")
-![Success Booking](./components//assets//SuccessBookingProduct.png | width="400" height="790")
+### Home Screen
+
+<p flexDirection="row">
+<img src="./components/assets/HomeScreenProduct.png" width="200" height="400" />
+<img src="./components/assets/FilterScreenProduct.png" width="200" height="400" />
+</p>
+
+### Booking Screen
+
+<p flexDirection="row">
+<img src="./components/assets/BookAppointmentProduct.png" width="200" height="400" />
+<img src="./components/assets/DoctorInfo.png" width="200" height="400" />
+</p>
 
 # Main Features
 
