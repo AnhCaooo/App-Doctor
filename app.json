@@ -27,6 +27,8 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "description": "This Doctor Mobile application allows customers to create their accounts for health checking and book an appointment with their desired doctors.",
+    "githubUrl": "https://github.com/AnhCaooo/App-Doctor"
   }
 }
