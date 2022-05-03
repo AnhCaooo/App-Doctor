@@ -19,10 +19,6 @@ function AppointmentScreen({ navigation }) {
     });
   };
 
-  const deleteMeeting = () => {
-    console.log("delete me");
-  };
-
   return (
     <View style={styles.container}>
       <FlatList
@@ -30,19 +26,11 @@ function AppointmentScreen({ navigation }) {
         keyExtractor={(item, index) => index.toString()}
         renderItem={({ item }) => (
           <View style={styles.cardContainer}>
-            <View>
+            <View style={styles.headerContainer}>
               <Text style={styles.header}>Doctor: {item.doctor}</Text>
               <Text>Meeting type: {item.meeting}</Text>
               <Text>Meeting time: {item.date}</Text>
             </View>
-            <Button
-              containerStyle={styles.button}
-              icon={
-                <Icon name="delete" size={28} type="material" color="red" />
-              }
-              type="clear"
-              onPress={deleteMeeting}
-            />
           </View>
         )}
       />
@@ -62,6 +50,12 @@ const styles = StyleSheet.create({
   cardContainer: {
     marginVertical: 30,
     flexDirection: "row",
+    borderWidth: 0.5,
+    borderRadius: 12,
+    width: Dimensions.get("window").width * 0.8,
+  },
+  headerContainer: {
+    margin: 20,
   },
   header: {
     fontSize: 20,
