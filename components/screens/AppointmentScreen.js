@@ -1,10 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { StyleSheet, View, Text, Dimensions, FlatList } from "react-native";
-import { Button, Icon } from "react-native-elements";
 import { auth, db } from "../../firebase";
 
 function AppointmentScreen({ navigation }) {
-  const [msg, setMsg] = useState("");
   const [appointments, setAppointments] = useState([]);
 
   useEffect(() => {
