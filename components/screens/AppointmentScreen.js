@@ -1,20 +1,51 @@
-import React from "react";
-import { StyleSheet, View, Text, Dimensions } from "react-native";
-import { Button } from "react-native-elements";
+import React, { useEffect, useState } from "react";
+import { StyleSheet, View, Text, Dimensions, FlatList } from "react-native";
+import { Button, Icon } from "react-native-elements";
+import { auth, db } from "../../firebase";
 
 function AppointmentScreen({ navigation }) {
+  const [msg, setMsg] = useState("");
+  const [appointments, setAppointments] = useState([]);
+
+  useEffect(() => {
+    fetchAppointments();
+  }, []);
+
+  const fetchAppointments = () => {
+    const appointmentRef = db.ref("appointments/" + auth.currentUser?.uid);
+    appointmentRef.on("value", (snapshot) => {
+      const data = snapshot.val();
+      setAppointments(Object.values(data));
+    });
+  };
+
+  const deleteMeeting = () => {
+    console.log("delete me");
+  };
+
   return (
     <View style={styles.container}>
-      <Text style={{ fontSize: 16 }}>Here is your appointment information</Text>
-
-      <View style={styles.buttonContainer}>
-        <View style={styles.button}>
-          <Button
-            title="Cancel Appointment"
-            onPress={() => console.log("cancel this appointment")}
-          />
-        </View>
-      </View>
+      <FlatList
+        data={appointments}
+        keyExtractor={(item, index) => index.toString()}
+        renderItem={({ item }) => (
+          <View style={styles.cardContainer}>
+            <View>
+              <Text style={styles.header}>Doctor: {item.doctor}</Text>
+              <Text>Meeting type: {item.meeting}</Text>
+              <Text>Meeting time: {item.date}</Text>
+            </View>
+            <Button
+              containerStyle={styles.button}
+              icon={
+                <Icon name="delete" size={28} type="material" color="red" />
+              }
+              type="clear"
+              onPress={deleteMeeting}
+            />
+          </View>
+        )}
+      />
     </View>
   );
 }
@@ -26,33 +57,17 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: "center",
     justifyContent: "center",
+    backgroundColor: "white",
+  },
+  cardContainer: {
+    marginVertical: 30,
+    flexDirection: "row",
   },
   header: {
-    marginLeft: 20,
+    fontSize: 20,
     fontWeight: "bold",
-    marginBottom: 16,
-  },
-  subHeader: {
-    marginLeft: 20,
-    marginBottom: 16,
-  },
-  buttonContainer: {
-    flex: 1,
-    flexDirection: "row",
-    alignItems: "flex-end",
-    justifyContent: "space-between",
-    paddingHorizontal: 10,
   },
   button: {
-    paddingLeft: 20,
     paddingRight: 20,
-    paddingBottom: 20,
-    width: Dimensions.get("window").width * 0.9,
-    marginHorizontal: 10,
-    borderTopLeftRadius: 10,
-    borderTopRightRadius: 10,
-    borderBottomLeftRadius: 10,
-    borderBottomRightRadius: 10,
-    color: "#1E90FF",
   },
 });

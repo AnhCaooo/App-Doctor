@@ -14,7 +14,6 @@ import ModalPopUp from "../subcomponents/ModalPopUp";
 import meetings from "../consts/Meetings";
 import DateTimePicker from "@react-native-community/datetimepicker";
 import { auth, db } from "../../firebase";
-import firebase from "firebase/app";
 
 function MedicalAppointmentScreen({ navigation, doctor }) {
   const [appointment, setAppointment] = useState({
