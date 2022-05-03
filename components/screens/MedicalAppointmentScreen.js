@@ -13,10 +13,12 @@ import { format } from "date-fns";
 import ModalPopUp from "../subcomponents/ModalPopUp";
 import meetings from "../consts/Meetings";
 import DateTimePicker from "@react-native-community/datetimepicker";
+import { auth, db } from "../../firebase";
+import firebase from "firebase/app";
 
 function MedicalAppointmentScreen({ navigation, doctor }) {
   const [appointment, setAppointment] = useState({
-    doctor: doctor,
+    doctor: `${doctor.firstname} ${doctor.lastname}`,
     date: new Date(),
     meeting: "",
   });
@@ -43,6 +45,13 @@ function MedicalAppointmentScreen({ navigation, doctor }) {
   };
 
   const [visible, setVisible] = useState(false);
+
+  const saveAppointments = (appointment) => {
+    db.ref("appointments/" + auth.currentUser?.uid).push({
+      ...appointment,
+      date: firebase.firestore.Timestamp.fromDate(appointment.date),
+    });
+  };
 
   return (
     <View style={styles.headerContainer}>
@@ -130,6 +139,7 @@ function MedicalAppointmentScreen({ navigation, doctor }) {
           title="Book"
           onPress={() => {
             setVisible(true);
+            saveAppointments(appointment);
             console.log(appointment);
           }}
         />
@@ -156,7 +166,6 @@ const styles = StyleSheet.create({
   changeDateContainer: {
     fontSize: 16,
     color: "#CD853F",
-    //fontWeight: "bold",
   },
   appointmentTime: {
     fontSize: 20,

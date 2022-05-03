@@ -1,7 +1,6 @@
 // Import the functions you need from the SDKs you need
-import * as firebase from "firebase";
-
-import AsyncStorage from "@react-native-async-storage/async-storage";
+import firebase from "firebase";
+import "firebase/database";
 
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -10,6 +9,8 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 const firebaseConfig = {
   apiKey: "AIzaSyBYSBmyqSfHH5MosKbiAxAWPx2Wk7PgN0I",
   authDomain: "doctor-mobile-app-ba1ef.firebaseapp.com",
+  databaseURL:
+    "https://doctor-mobile-app-ba1ef-default-rtdb.europe-west1.firebasedatabase.app",
   projectId: "doctor-mobile-app-ba1ef",
   storageBucket: "doctor-mobile-app-ba1ef.appspot.com",
   messagingSenderId: "510646349622",
@@ -22,4 +23,6 @@ const app = firebase.initializeApp(firebaseConfig);
 // Initialize Firebase Authentication and get a reference to the service
 const auth = firebase.auth();
 
-export { auth };
+const db = firebase.database();
+
+export { auth, db };
