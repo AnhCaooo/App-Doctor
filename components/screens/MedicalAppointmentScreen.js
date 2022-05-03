@@ -49,7 +49,7 @@ function MedicalAppointmentScreen({ navigation, doctor }) {
   const saveAppointments = (appointment) => {
     db.ref("appointments/" + auth.currentUser?.uid).push({
       ...appointment,
-      date: firebase.firestore.Timestamp.fromDate(appointment.date),
+      date: format(appointment.date, "EEEE, MMM dd HH:mm aaa"),
     });
   };
 
@@ -96,7 +96,7 @@ function MedicalAppointmentScreen({ navigation, doctor }) {
             textStyle={{ fontSize: 18 }}
             circleStyle={{ size: 18 }}
             selectedBtn={(meeting) =>
-              setAppointment({ ...appointment, meeting: meeting })
+              setAppointment({ ...appointment, meeting: meeting.label })
             }
             icon={<Icon name="check-circle" size={25} color="#2c9dd1" />}
           />
@@ -140,7 +140,6 @@ function MedicalAppointmentScreen({ navigation, doctor }) {
           onPress={() => {
             setVisible(true);
             saveAppointments(appointment);
-            console.log(appointment);
           }}
         />
       </View>
