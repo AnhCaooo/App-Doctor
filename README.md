@@ -35,6 +35,7 @@ This Doctor Mobile application allows customers to create their account for heal
 - Get current date and date format
 - Search doctor, filter by First Name and Last Name
 - Book an appointment with the doctor by choosing time and select one meeting option. There are 3 options for meeting with the doctor: Audio Chat, Video Conference, Contact Meeting.
+- Check the booking in the Appointment Screen
 
 ## Technologies
 
@@ -47,6 +48,7 @@ This Doctor Mobile application allows customers to create their account for heal
 - Date-fns format
 - Radio Button React Native V1
 - Firebase Authentication V8
+- Firebase Realtime Database
 
 ## Quick Start
 
