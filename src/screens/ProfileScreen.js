@@ -1,7 +1,7 @@
 import React from "react";
 import { StyleSheet, View, Text } from "react-native";
 import { Avatar, Button } from "react-native-elements";
-import { auth } from "../../firebase";
+import { auth } from "../../../firebase";
 
 export default function ProfileScreen({ navigation }) {
   const handleSignOut = () => {
@@ -65,7 +65,6 @@ const styles = StyleSheet.create({
   avatarStyle: {
     borderWidth: 1,
     borderColor: "#A9A9A9",
-    borderWidth: 1,
   },
   textContainer: {
     fontSize: 20,

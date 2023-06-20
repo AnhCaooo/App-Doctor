@@ -52,21 +52,23 @@ This Doctor Mobile application allows customers to create their account for heal
 
 ## Quick Start
 
-Here are some steps to run this project:
+Here are some basic steps to run this project:
 
-1. Clone the project
+- First step: Clone the project
 
 ```
 git@github.com:AnhCaooo/App-Doctor.git
 ```
 
-2. Download node_modules
+- Second step: Download node_modules
 
 ```
 npm install
 ```
 
-3. Run Expo
+- Third step: Depending on your current OS (e.g. Windows, Linux, or MacOS), please check from the Internet how to set up before running the last step.
+
+- Last step: Run Expo
 
 ```
 expo start

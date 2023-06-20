@@ -3,11 +3,11 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import Ionicons from "react-native-vector-icons/Ionicons";
 
-import AppointmentScreen from "../screens/AppointmentScreen";
-import BookingScreen from "../screens/BookingScreen";
-import DietScreen from "../screens/DietScreen";
-import HomeScreen from "../screens/HomeScreen";
-import ProfileScreen from "../screens/ProfileScreen";
+import AppointmentScreen from "../components/screens/AppointmentScreen";
+import BookingScreen from "../components/screens/BookingScreen";
+import DietScreen from "../components/screens/DietScreen";
+import HomeScreen from "../components/screens/HomeScreen";
+import ProfileScreen from "../components/screens/ProfileScreen";
 
 const Tab = createBottomTabNavigator();
 const Stack = createNativeStackNavigator();
