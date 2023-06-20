@@ -1,7 +1,10 @@
 import React, { useState, useRef, useEffect } from "react";
 import { StyleSheet, Modal, View, Animated } from "react-native";
 
-function ModalPopUp({ visible, children }) {
+function ModalPopUp({
+  visible,
+  children
+}: any) {
   const [showModal, setShowModal] = useState(visible);
   const scaleValue = useRef(new Animated.Value(0)).current;
 
@@ -14,6 +17,7 @@ function ModalPopUp({ visible, children }) {
       setShowModal(true);
       Animated.spring(scaleValue, {
         toValue: 1,
+        // @ts-expect-error TS(2345): Argument of type '{ toValue: number; duration: num... Remove this comment to see the full error message
         duration: 300,
         useNativeDriver: true,
       }).start();

@@ -7,7 +7,9 @@ import MedicalAppointmentScreen from "../screens/MedicalAppointmentScreen";
 
 const Stack = createNativeStackNavigator();
 
-function SubTabView({ doctor }) {
+function SubTabView({
+  doctor
+}: any) {
   const layout = useWindowDimensions();
 
   const [index, setIndex] = useState(0);
@@ -23,7 +25,9 @@ function SubTabView({ doctor }) {
     return <AboutDoctorScreen doctor={doctor} />;
   };
 
-  const renderScene = ({ route }) => {
+  const renderScene = ({
+    route
+  }: any) => {
     switch (route.key) {
       case "first":
         return <MedicalAppointmentRoute />;

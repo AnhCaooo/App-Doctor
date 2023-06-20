@@ -1,7 +1,10 @@
 import React from "react";
 import { StyleSheet, View, Text } from "react-native";
 
-function AboutDoctorScreen({ navigation, doctor }) {
+function AboutDoctorScreen({
+  navigation,
+  doctor
+}: any) {
   return (
     <View style={styles.headerContainer}>
       <Text style={styles.headerText}>Doctor's greeting</Text>

@@ -2,7 +2,9 @@ import React from "react";
 import { StyleSheet, View, Text, Dimensions } from "react-native";
 import { Button } from "react-native-elements";
 
-function ConfirmScreen({ navigation }) {
+function ConfirmScreen({
+  navigation
+}: any) {
   return (
     <View style={styles.container}>
       <View style={styles.header}>

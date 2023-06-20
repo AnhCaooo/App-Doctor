@@ -3,7 +3,10 @@ import { StyleSheet, View, Text } from "react-native";
 import { Avatar, Icon } from "react-native-elements";
 import SubTabView from "../navigation/SubTabView";
 
-function BookingScreen({ navigation, route }) {
+function BookingScreen({
+  navigation,
+  route
+}: any) {
   const doctor = route.params;
 
   return (
@@ -43,10 +46,15 @@ function BookingScreen({ navigation, route }) {
           </View>
         </View>
         <View style={{ flexDirection: "row" }}>
+          // @ts-expect-error TS(2741): Property 'tvParallaxProperties' is missing in type... Remove this comment to see the full error message
           <Icon name="star" size={20} color="orange" />
+          // @ts-expect-error TS(2741): Property 'tvParallaxProperties' is missing in type... Remove this comment to see the full error message
           <Icon name="star" size={20} color="orange" />
+          // @ts-expect-error TS(2741): Property 'tvParallaxProperties' is missing in type... Remove this comment to see the full error message
           <Icon name="star" size={20} color="orange" />
+          // @ts-expect-error TS(2741): Property 'tvParallaxProperties' is missing in type... Remove this comment to see the full error message
           <Icon name="star" size={20} color="orange" />
+          // @ts-expect-error TS(2741): Property 'tvParallaxProperties' is missing in type... Remove this comment to see the full error message
           <Icon name="star" size={20} color="orange" />
         </View>
       </View>

@@ -9,7 +9,9 @@ import {
 import { Button } from "react-native-elements";
 import { auth } from "../../firebase";
 
-const LoginScreen = ({ navigation }) => {
+const LoginScreen = ({
+  navigation
+}: any) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -23,8 +25,10 @@ const LoginScreen = ({ navigation }) => {
       .then((userCredentials) => {
         const user = userCredentials.user;
         navigation.navigate("HomeScreen");
+        // @ts-expect-error TS(2531): Object is possibly 'null'.
         console.log("Logged in with", user.email);
       })
+      // @ts-expect-error TS(2304): Cannot find name 'alert'.
       .catch((error) => alert(error.message));
   };
 

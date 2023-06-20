@@ -10,7 +10,9 @@ import {
 const { width } = Dimensions.get("screen");
 const cardWidth = width / 1.2;
 
-function QuickRoute({ page }) {
+function QuickRoute({
+  page
+}: any) {
   return (
     <View style={styles.quickRoute}>
       <ImageBackground
@@ -47,6 +49,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     lineHeight: 75,
     backgroundColor: "#E6E6FA",
+    // @ts-expect-error TS(1117): An object literal cannot have multiple properties ... Remove this comment to see the full error message
     lineHeight: 0.75,
   },
 });

@@ -5,7 +5,7 @@ import { SearchBar } from "react-native-elements";
 function SearchDiet() {
   const [search, setSearch] = useState("");
 
-  const updateSearch = (userSearch) => {
+  const updateSearch = (userSearch: any) => {
     setSearch(userSearch);
   };
 
@@ -13,10 +13,12 @@ function SearchDiet() {
     <View>
       <SearchBar
         round
+        // @ts-expect-error TS(2322): Type '{ size: number; }' is not assignable to type... Remove this comment to see the full error message
         searchIcon={{ size: 26 }}
         containerStyle={styles.container}
         inputContainerStyle={styles.inpurtContainer}
         placeholder="Search meals, diets"
+        // @ts-expect-error TS(2322): Type '(userSearch: any) => void' is not assignable... Remove this comment to see the full error message
         onChangeText={updateSearch}
         value={search}
       />

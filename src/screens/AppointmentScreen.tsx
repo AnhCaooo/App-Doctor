@@ -2,7 +2,9 @@ import React, { useEffect, useState } from "react";
 import { StyleSheet, View, Text, Dimensions, FlatList } from "react-native";
 import { auth, db } from "../../firebase";
 
-function AppointmentScreen({ navigation }) {
+function AppointmentScreen({
+  navigation
+}: any) {
   const [appointments, setAppointments] = useState([]);
 
   useEffect(() => {
@@ -25,8 +27,11 @@ function AppointmentScreen({ navigation }) {
         renderItem={({ item }) => (
           <View style={styles.cardContainer}>
             <View style={styles.headerContainer}>
+              // @ts-expect-error TS(2339): Property 'doctor' does not exist on type 'never'.
               <Text style={styles.header}>Doctor: {item.doctor}</Text>
+              // @ts-expect-error TS(2339): Property 'meeting' does not exist on type 'never'.
               <Text>Meeting type: {item.meeting}</Text>
+              // @ts-expect-error TS(2339): Property 'date' does not exist on type 'never'.
               <Text>Meeting time: {item.date}</Text>
             </View>
           </View>

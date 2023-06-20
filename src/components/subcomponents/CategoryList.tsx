@@ -18,6 +18,7 @@ function CategoryList() {
         horizontal
         showsHorizontalScrollIndicator={false}
         data={categories}
+        // @ts-expect-error TS(2769): No overload matches this call.
         keyExtractor={(item, index) => index}
         renderItem={({ item, index }) => (
           <View style={styles.categoryListContainer}>

@@ -4,7 +4,10 @@ import { StyleSheet, View, Text, Dimensions, Image } from "react-native";
 const { width } = Dimensions.get("screen");
 const cardWidth = width / 1.9;
 
-function Card({ doctor, index }) {
+function Card({
+  doctor,
+  index
+}: any) {
   return (
     <View style={styles.card}>
       <Image

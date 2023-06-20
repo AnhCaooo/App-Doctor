@@ -3,10 +3,15 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import Ionicons from "react-native-vector-icons/Ionicons";
 
+// @ts-expect-error TS(2307): Cannot find module '../components/screens/Appointm... Remove this comment to see the full error message
 import AppointmentScreen from "../components/screens/AppointmentScreen";
+// @ts-expect-error TS(2307): Cannot find module '../components/screens/BookingS... Remove this comment to see the full error message
 import BookingScreen from "../components/screens/BookingScreen";
+// @ts-expect-error TS(2307): Cannot find module '../components/screens/DietScre... Remove this comment to see the full error message
 import DietScreen from "../components/screens/DietScreen";
+// @ts-expect-error TS(2307): Cannot find module '../components/screens/HomeScre... Remove this comment to see the full error message
 import HomeScreen from "../components/screens/HomeScreen";
+// @ts-expect-error TS(2307): Cannot find module '../components/screens/ProfileS... Remove this comment to see the full error message
 import ProfileScreen from "../components/screens/ProfileScreen";
 
 const Tab = createBottomTabNavigator();
@@ -50,6 +55,7 @@ const HomeTabNavigator = () => {
             iconName = "md-person-outline";
           }
 
+          // @ts-expect-error TS(2769): No overload matches this call.
           return <Ionicons name={iconName} size={size} color={color} />;
         },
         tabBarActiveTintColor: "#216afc",

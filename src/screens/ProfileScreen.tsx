@@ -1,16 +1,20 @@
 import React from "react";
 import { StyleSheet, View, Text } from "react-native";
 import { Avatar, Button } from "react-native-elements";
+// @ts-expect-error TS(2307): Cannot find module '../../../firebase' or its corr... Remove this comment to see the full error message
 import { auth } from "../../../firebase";
 
-export default function ProfileScreen({ navigation }) {
+export default function ProfileScreen({
+  navigation
+}: any) {
   const handleSignOut = () => {
     auth
       .signOut()
       .then(() => {
         navigation.navigate("LoginScreen");
       })
-      .catch((err) => alert(err.message));
+      // @ts-expect-error TS(2304): Cannot find name 'alert'.
+      .catch((err: any) => alert(err.message));
   };
 
   return (

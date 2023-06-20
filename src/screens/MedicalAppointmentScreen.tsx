@@ -8,14 +8,20 @@ import {
   TouchableOpacity,
 } from "react-native";
 import { Card, Button, Icon } from "react-native-elements";
+// @ts-expect-error TS(7016): Could not find a declaration file for module 'radi... Remove this comment to see the full error message
 import RadioButtonRN from "radio-buttons-react-native";
 import { format } from "date-fns";
+// @ts-expect-error TS(2307): Cannot find module '../subcomponents/ModalPopUp' o... Remove this comment to see the full error message
 import ModalPopUp from "../subcomponents/ModalPopUp";
+// @ts-expect-error TS(2307): Cannot find module '../consts/Meetings' or its cor... Remove this comment to see the full error message
 import meetings from "../consts/Meetings";
 import DateTimePicker from "@react-native-community/datetimepicker";
 import { auth, db } from "../../firebase";
 
-function MedicalAppointmentScreen({ navigation, doctor }) {
+function MedicalAppointmentScreen({
+  navigation,
+  doctor
+}: any) {
   const [appointment, setAppointment] = useState({
     doctor: `${doctor.firstname} ${doctor.lastname}`,
     date: new Date(),
@@ -24,13 +30,13 @@ function MedicalAppointmentScreen({ navigation, doctor }) {
   const [mode, setMode] = useState("date");
   const [show, setShow] = useState(false);
 
-  const onChange = (event, selectedDate) => {
+  const onChange = (event: any, selectedDate: any) => {
     const currentDate = selectedDate;
     setShow(false);
     setAppointment({ ...appointment, date: currentDate });
   };
 
-  const showMode = (currentMode) => {
+  const showMode = (currentMode: any) => {
     setShow(true);
     setMode(currentMode);
   };
@@ -45,7 +51,7 @@ function MedicalAppointmentScreen({ navigation, doctor }) {
 
   const [visible, setVisible] = useState(false);
 
-  const saveAppointments = (appointment) => {
+  const saveAppointments = (appointment: any) => {
     db.ref("appointments/" + auth.currentUser?.uid).push({
       ...appointment,
       date: format(appointment.date, "EEEE, MMM dd HH:mm aaa"),
@@ -78,6 +84,7 @@ function MedicalAppointmentScreen({ navigation, doctor }) {
             <DateTimePicker
               testID="dateTimePicker"
               value={appointment.date}
+              // @ts-expect-error TS(2322): Type 'string' is not assignable to type 'AndroidMo... Remove this comment to see the full error message
               mode={mode}
               is24Hour={true}
               themeVariant="light"
@@ -88,15 +95,16 @@ function MedicalAppointmentScreen({ navigation, doctor }) {
       </View>
 
       <View style={styles.panel}>
+        // @ts-expect-error TS(2322): Type '{ children: Element; containerStyle: { width... Remove this comment to see the full error message
         <Card containerStyle={styles.card}>
           <RadioButtonRN
             data={meetings}
             boxStyle={{ borderWidth: 0 }}
             textStyle={{ fontSize: 18 }}
             circleStyle={{ size: 18 }}
-            selectedBtn={(meeting) =>
-              setAppointment({ ...appointment, meeting: meeting.label })
+            selectedBtn={(meeting: any) => setAppointment({ ...appointment, meeting: meeting.label })
             }
+            // @ts-expect-error TS(2741): Property 'tvParallaxProperties' is missing in type... Remove this comment to see the full error message
             icon={<Icon name="check-circle" size={25} color="#2c9dd1" />}
           />
         </Card>

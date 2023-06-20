@@ -3,7 +3,9 @@ import React, { useState } from "react";
 import { Button } from "react-native-elements";
 import { auth } from "../../firebase";
 
-const SignUpScreen = ({ navigation }) => {
+const SignUpScreen = ({
+  navigation
+}: any) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -12,9 +14,11 @@ const SignUpScreen = ({ navigation }) => {
       .createUserWithEmailAndPassword(email, password)
       .then((userCredentials) => {
         const user = userCredentials.user;
+        // @ts-expect-error TS(2531): Object is possibly 'null'.
         console.log("Register new user: ", user.email);
         navigateLogin();
       })
+      // @ts-expect-error TS(2304): Cannot find name 'alert'.
       .catch((error) => alert(error.message));
   };
 

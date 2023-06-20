@@ -1,8 +1,11 @@
 import React from "react";
 import { StyleSheet, View } from "react-native";
+// @ts-expect-error TS(2307): Cannot find module '../subcomponents/SearchDiet' o... Remove this comment to see the full error message
 import SearchDiet from "../subcomponents/SearchDiet";
 
-function DietScreen({ navigation }) {
+function DietScreen({
+  navigation
+}: any) {
   return (
     <View style={styles.container}>
       <SearchDiet />

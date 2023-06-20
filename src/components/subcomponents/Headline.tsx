@@ -12,6 +12,7 @@ export default function Headline() {
         <Text style={{ fontSize: 28, fontWeight: "bold" }}>Dashboard</Text>
         <Text style={{ fontSize: 16 }}>{format(date, "EEEE, MMMM dd")}</Text>
       </View>
+      // @ts-expect-error TS(2741): Property 'tvParallaxProperties' is missing in type... Remove this comment to see the full error message
       <Icon name="notifications" size={26} color={"grey"} />
     </View>
   );

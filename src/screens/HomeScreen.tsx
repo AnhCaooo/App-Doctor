@@ -9,25 +9,33 @@ import {
   Dimensions,
 } from "react-native";
 import { SearchBar } from "react-native-elements";
+// @ts-expect-error TS(2307): Cannot find module '../subcomponents/Headline' or ... Remove this comment to see the full error message
 import Headline from "../subcomponents/Headline";
+// @ts-expect-error TS(2307): Cannot find module '../subcomponents/CategoryList'... Remove this comment to see the full error message
 import CategoryList from "../subcomponents/CategoryList";
+// @ts-expect-error TS(2307): Cannot find module '../subcomponents/Card' or its ... Remove this comment to see the full error message
 import Card from "../subcomponents/Card";
+// @ts-expect-error TS(2307): Cannot find module '../subcomponents/QuickRoute' o... Remove this comment to see the full error message
 import QuickRoute from "../subcomponents/QuickRoute";
+// @ts-expect-error TS(2307): Cannot find module '../consts/Doctor' or its corre... Remove this comment to see the full error message
 import doctors from "../consts/Doctor";
+// @ts-expect-error TS(2307): Cannot find module '../consts/PageImages' or its c... Remove this comment to see the full error message
 import pageImages from "../consts/PageImages";
 
-export default function HomeScreen({ navigation }) {
+export default function HomeScreen({
+  navigation
+}: any) {
   const [search, setSearch] = useState("");
   const [filteredDataSource, setFilteredDataSource] = useState(doctors);
   const [masterDataSource, setMasterDataSource] = useState(doctors);
 
-  const searchFilterFunction = (text) => {
+  const searchFilterFunction = (text: any) => {
     // Check if searched text is not blank
     if (text) {
       // Inserted text is not blank
       // Filter the masterDataSource
       // Update FilteredDataSource
-      const newData = masterDataSource.filter(function (item) {
+      const newData = masterDataSource.filter(function (item: any) {
         const itemData = `${item.firstname} ${item.lastname}`
           ? `${item.firstname} ${item.lastname}`.toUpperCase()
           : "".toUpperCase();
@@ -63,12 +71,15 @@ export default function HomeScreen({ navigation }) {
 
         <SearchBar
           round
+          // @ts-expect-error TS(2322): Type '{ size: number; }' is not assignable to type... Remove this comment to see the full error message
           searchIcon={{ size: 26 }}
           containerStyle={styles.searchContainer}
           inputContainerStyle={styles.searchInputContainer}
           placeholder="Type your doctor's name"
+          // @ts-expect-error TS(2322): Type '(text: string) => void' is not assignable to... Remove this comment to see the full error message
           onChangeText={(text) => searchFilterFunction(text)}
-          onClear={(text) => searchFilterFunction("")}
+          // @ts-expect-error TS(2322): Type '(text: any) => void' is not assignable to ty... Remove this comment to see the full error message
+          onClear={(text: any) => searchFilterFunction("")}
           value={search}
         />
 
